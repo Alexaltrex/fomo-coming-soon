@@ -1,0 +1,175 @@
+@import "../../../assets/styles/app";
+
+.connectWallet {
+  @include centerColumn;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  & > svg {
+    width: 113px;
+    height: 18px;
+
+    @include desktop {
+      width: 145px;
+      height: 24px;
+    }
+  }
+
+  .card {
+    margin-top: 24px;
+    border-top: 1px solid $color_lines;
+    width: 100%;
+
+    @include desktop {
+      border: 1px solid $color_lines;
+      width: 440px;
+    }
+
+    .cardHeader {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding-left: 12px;
+      border-bottom: 1px solid $color_lines;
+
+      span {
+        flex-grow: 1;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+        margin-left: 8px;
+      }
+
+      button {
+        @include button;
+        @include centerRow;
+        width: 36px;
+        height: 100%;
+        border-left: 1px solid $color_lines;
+      }
+
+    }
+
+    .description {
+      padding: 12px;
+      border: 1px solid $color_lines;
+      display: flex;
+
+      .icon {
+        flex-shrink: 0;
+        @include centerRow;
+        border: 1px solid $color_lines;
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
+
+        @include desktop {
+          width: 50px;
+          height: 50px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+
+          @include desktop {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
+    }
+
+    .connectBtn {
+      @include button;
+      @include centerRow;
+      width: 100%;
+      border-top: 1px solid $color_lines;
+      background: $color_main_10;
+      height: 48px;
+
+      span {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color_main;
+      }
+    }
+
+    .walletList {
+
+      button {
+        @include button;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 8px 12px;
+        border-bottom: 1px solid $color_lines;
+
+        .iconWrapper {
+          @include centerRow;
+          border: 1px solid $color_lines;
+          width: 32px;
+          height: 32px;
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .label {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+          margin-left: 12px;
+        }
+
+        .detected {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 12px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_body_50;
+        }
+
+
+      }
+    }
+
+    .signButton {
+      @include button;
+      @include centerRow;
+      width: 100%;
+      background: $color_white_3;
+      height: 48px;
+      border-bottom: 1px solid $color_lines;
+    }
+
+  }
+
+}

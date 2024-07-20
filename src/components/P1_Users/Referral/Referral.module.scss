@@ -1,0 +1,249 @@
+@import "../../../assets/styles/app";
+
+.referralComponent {
+  margin-top: 24px;
+  width: 100%;
+
+  @include desktop {
+    width: 440px;
+  }
+
+
+  .section {
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+
+    @include desktop {
+      border: 1px solid $color_lines;
+    }
+
+    &:not(:first-child) {
+      margin-top: 40px;
+
+      @include desktop {
+        margin-top: 24px;
+      }
+    }
+
+    .header {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+
+      @include desktop {
+        height: 36px;
+      }
+
+      p {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main;
+      }
+    }
+
+    .description {
+      padding: 12px;
+      border-top: 1px solid $color_lines;
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
+    }
+
+    .levels {
+      border-top: 1px solid $color_lines;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      .level {
+        position: relative;
+        padding: 4px 12px;
+
+        &:not(:first-child) {
+          border-left: 1px solid $color_lines;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+
+          &:last-child {
+            color: $color_main_100;
+          }
+        }
+
+        .dots {
+          position: absolute;
+          display: flex;
+          top: 0;
+          left: 0;
+
+          div {
+            width: 4px;
+            height: 4px;
+            background: $color_main;
+
+            &:not(:first-child) {
+              margin-left: 2px;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    .codeSection {
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        flex-direction: row;
+        height: 36px;
+      }
+
+
+      .top, .generateBtn {
+        height: 48px;
+        border-top: 1px solid $color_lines;
+
+        @include desktop {
+          height: 100%;
+        }
+      }
+
+      .top {
+        display: flex;
+
+        .code {
+          @include centerRow;
+          width: 70px;
+          border-right: 1px solid $color_lines;
+
+          p {
+            margin-left: 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            text-align: right;
+            color: $color_body_50;
+          }
+        }
+
+        .codeValue {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          padding: 0 12px;
+          border-right: 1px solid $color_lines;
+
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
+        }
+
+        .copyBtn {
+          @include button;
+          @include centerRow;
+          width: 48px;
+
+          @include desktop {
+            width: 36px;
+          }
+        }
+
+
+        @include desktop {
+          flex-grow: 1;
+        }
+      }
+
+      .generateBtn {
+        @include button;
+        @include centerRow;
+        border-top: 1px solid $color_lines;
+        background: $color_main_10;
+
+        @include desktop {
+          flex-shrink: 0;
+          width: 164px;
+        }
+
+        span {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          text-align: center;
+          color: $color_main;
+        }
+      }
+
+
+    }
+
+    .useCount {
+      height: 36px;
+      border-top: 1px solid $color_lines;
+      padding: 12px 10px;
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+
+      span {
+        color: $color_main;
+      }
+    }
+
+    .schemeWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 0;
+      border-top: 1px solid $color_lines;
+
+      .schemeMobile {
+        @include onlyMobile();
+        width: 360px;
+        height: auto;
+      }
+
+      .schemeDesktop {
+        @include onlyDesktop();
+        width: 440px;
+        height: auto;
+      }
+
+    }
+
+
+  }
+
+  .bottomText {
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_body_50;
+    text-align: center;
+
+    span {
+      color: rgba(211, 249, 50, 0.4);
+    }
+  }
+}

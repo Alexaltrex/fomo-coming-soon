@@ -1,0 +1,108 @@
+@import "../../assets/styles/app";
+
+.comingSoon {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  @include desktop {
+    align-items: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      width: 440px;
+    }
+
+    .inputWrapper {
+      margin-top: 24px;
+      border: 1px solid $color_lines;
+
+      input {
+        padding: 16px 12px;
+        width: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+
+
+
+        &::placeholder {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+      }
+
+    }
+
+    .continueBtn {
+      @include button;
+      margin-top: 24px;
+      padding: 16px 0;
+      border: 1px solid $color_lines;
+      background: $color_main_10;
+
+      @include desktop {
+        margin-top: 12px;
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color_main;
+      }
+    }
+  }
+
+  .title {
+    align-self: center;
+    width: 113px;
+    height: 18px;
+    margin-top: 16px;
+
+    @include desktop {
+      width: 145px;
+      height: 24px;
+      margin-top: 0;
+    }
+
+    svg {
+      width: 100%;
+    }
+  }
+
+
+
+  .socialLinks {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    .link {
+      @include centerRow;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $color_lines;
+
+      &:not(:first-child) {
+        margin-left: 12px;
+      }
+    }
+  }
+
+
+}
