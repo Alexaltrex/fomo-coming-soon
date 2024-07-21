@@ -2,10 +2,15 @@ import style from "./Referral.module.scss"
 import {svgIcons} from "../../../assets/svgIcons";
 import schemeMobile from "../../../assets/png/scheme_mobile.png";
 import schemeDesktop from "../../../assets/png/scheme_desktop.png";
+import {useEffect, useState} from "react";
+import {CopyButton} from "../Tasks/CopyButton/CopyButton";
 export const Referral = () => {
 
     const levels = [35, 3.5, 3, 2, 1]
 
+   const onCopy = () => {
+
+   }
 
     return (
         <div className={style.referralComponent}>
@@ -56,9 +61,9 @@ export const Referral = () => {
                             Z7XMLk6yMLk6H
                         </p>
 
-                        <button className={style.copyBtn}>
-                            {svgIcons.copy}
-                        </button>
+                        <CopyButton
+                            //onClick={onCopy}
+                        />
 
                     </div>
                     <button className={style.generateBtn}>

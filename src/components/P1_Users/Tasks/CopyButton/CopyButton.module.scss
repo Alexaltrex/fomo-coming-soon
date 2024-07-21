@@ -1,0 +1,19 @@
+@import "../../../../assets/styles/app";
+
+.copyButton {
+  @include button;
+  @include centerRow;
+  width: 48px;
+  background-color: transparent;
+  transition: 0.3s;
+
+  @include desktop {
+    width: 36px;
+  }
+
+  &:hover {
+    @include desktop {
+      background: #222;
+    }
+  }
+}

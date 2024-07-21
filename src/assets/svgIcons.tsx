@@ -67,7 +67,7 @@ export const svgIcons = {
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14 5.66667V14.2222H13.2V15H2.8V14.2222H2V1.77778H2.8V1H9.2V5.66667H14Z" fill="white"
                   fillOpacity="0.5"/>
-            <path d="M14 4.2V5H10V1H10.8V1.8H11.6V2.6H12.4V3.4H13.2V4.2H14Z" fill="white" fill-opacity="0.5"/>
+            <path d="M14 4.2V5H10V1H10.8V1.8H11.6V2.6H12.4V3.4H13.2V4.2H14Z" fill="white" fillOpacity="0.5"/>
         </svg>
     ),
     copy: (
