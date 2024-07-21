@@ -1,4 +1,4 @@
-import style from "./Leader.module.scss";
+import style from "./Users.module.scss";
 import {clsx} from "clsx";
 import {svgIcons} from "../../assets/svgIcons";
 import {Tasks} from "./Tasks/Tasks";
@@ -7,7 +7,7 @@ import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
 export const User = () => {
 
     return (
-        <div className={style.leader}>
+        <div className={style.users}>
 
 
             <div className={clsx({

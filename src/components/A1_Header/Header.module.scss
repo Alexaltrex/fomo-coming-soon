@@ -1,0 +1,84 @@
+@import "../../assets/styles/app";
+
+.header {
+  flex-shrink: 0;
+  height: 48px;
+  border-bottom: 1px solid $color_lines;
+  display: flex;
+
+  .logo {
+    @include centerRow;
+    height: 100%;
+    width: 48px;
+    border-right: 1px solid $color_lines;
+    flex-shrink: 0;
+  }
+
+  .rightPart {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    .borderItem {
+      &:not(:last-child) {
+        border-right: 1px solid $color_lines;
+      }
+
+      &:first-child {
+        border-left: 1px solid $color_lines;
+      }
+    }
+
+    .connectedItem {
+      @include centerRow;
+      height: 100%;
+      width: 155px;
+
+      @include desktop {
+        width: 160px;
+      }
+
+      svg {
+        path {
+          fill: $color_main;
+          fill-opacity: 1;
+        }
+      }
+
+      p {
+        margin-left: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+      }
+
+
+    }
+
+
+    .connectBtn {
+      @include button;
+      @include centerRow;
+      //border-left: 1px solid $color_lines;
+      height: 100%;
+      width: 155px;
+
+      @include desktop {
+        width: 160px;
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color_main;
+
+      }
+
+    }
+  }
+
+}

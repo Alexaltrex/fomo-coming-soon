@@ -28,6 +28,8 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
             onClick();
         } catch (e: any) {
             console.log(e.message)
+        } finally {
+            formikHelpers.resetForm();
         }
     }
 

@@ -3,7 +3,7 @@ import {FormikErrors, FormikHelpers} from "formik/dist/types";
 import {useFormik} from "formik";
 import {svgIcons} from "../../../assets/svgIcons";
 import {useState} from "react";
-import {ConnectWallet} from "../ConnectWallet/ConnectWallet";
+import {ConnectWallet} from "../../P0_EnterCode/ConnectWallet/ConnectWallet";
 
 interface IValues {
     value: number
@@ -32,9 +32,12 @@ export const Timer = () => {
     }
     const onSubmit = async (values: IValues, formikHelpers: FormikHelpers<IValues>) => {
         try {
-            console.log(values)
+            console.log(values);
+            setConnectWallet(true);
         } catch (e: any) {
             console.log(e.message)
+        } finally {
+            formikHelpers.resetForm();
         }
     }
 
@@ -122,17 +125,13 @@ export const Timer = () => {
 
             </form>
 
-            <div className={style.haveInviteCode}>
-                <div className={style.left}>
-                    {svgIcons.copy}
-                    <span>have invite Code</span>
-                </div>
-                <div className={style.right}>
-                    <span>Z7Xy9Qp4MvB2Lk6H</span>
-                </div>
-            </div>
-
-            {connectWallet && <ConnectWallet onClose={() => setConnectWallet(false)}/>}
+            {
+                connectWallet && (
+                    <ConnectWallet onClose={() => setConnectWallet(false)}
+                                   onSign={() => setConnectWallet(false)}
+                    />
+                )
+            }
 
         </div>
     )

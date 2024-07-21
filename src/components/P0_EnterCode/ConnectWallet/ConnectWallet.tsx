@@ -8,9 +8,13 @@ import {useStore} from "../../../store/rootStore";
 
 interface IConnectWallet {
     onClose: () => void
+    onSign: () => void
 }
 
-export const ConnectWallet: FC<IConnectWallet> = observer(({onClose}) => {
+export const ConnectWallet: FC<IConnectWallet> = observer(({
+                                                               onClose,
+                                                               onSign,
+}) => {
     const {
         appStore: {
             setAddress
@@ -125,14 +129,15 @@ export const ConnectWallet: FC<IConnectWallet> = observer(({onClose}) => {
                                         }
                                     </div>
                                 ) : (
-                                    <Link className={style.signButton}
-                                          to="/user"
-                                          onClick={() => {
-                                              setAddress("0x1ABC7154748D1CE5144478CDEB574AE244B939B5");
-                                          }}
+                                    <button className={style.signButton}
+                                            onClick={() => {
+                                                setAddress("0x1ABC7154748D1CE5144478CDEB574AE244B939B5");
+                                                onSign();
+                                                onClose();
+                                            }}
                                     >
                                         {svgIcons.circleNotch}
-                                    </Link>
+                                    </button>
                                 )
                             }
 

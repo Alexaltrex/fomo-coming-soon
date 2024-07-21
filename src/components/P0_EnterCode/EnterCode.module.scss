@@ -1,6 +1,6 @@
 @import "../../assets/styles/app";
 
-.comingSoon {
+.enterCode {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,14 @@
 
   @include desktop {
     align-items: center;
+  }
+
+  &_paddingBottom {
+    padding-bottom: 60px;
+
+    @include desktop {
+     padding-bottom: 0px;
+    }
   }
 
   .form {
@@ -84,25 +92,5 @@
       width: 100%;
     }
   }
-
-
-
-  .socialLinks {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-
-    .link {
-      @include centerRow;
-      width: 48px;
-      height: 48px;
-      border: 1px solid $color_lines;
-
-      &:not(:first-child) {
-        margin-left: 12px;
-      }
-    }
-  }
-
 
 }

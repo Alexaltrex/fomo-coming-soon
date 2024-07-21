@@ -1,4 +1,4 @@
-import style from "./Leader.module.scss";
+import style from "./Users.module.scss";
 import {useState} from "react";
 import {clsx} from "clsx";
 import {svgIcons} from "../../assets/svgIcons";
@@ -10,7 +10,8 @@ export const Leader = () => {
     const [tab, setTab] = useState(0)
 
     return (
-        <div className={style.leader}>
+        <div className={style.users}>
+
             <div className={style.tabs}>
                 {
                     ["Tasks", "referral"].map((label, key) => (

@@ -1,0 +1,75 @@
+//========= BREAK POINTS =========//
+@mixin desktop {
+  @media all and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onlyMobile($displayType: block) {
+  display: $displayType;
+  @content;
+
+  @include desktop() {
+    display: none;
+  }
+}
+
+@mixin onlyDesktop($displayType: block) {
+  display: none;
+
+  @include desktop {
+    display: $displayType;
+    @content;
+  }
+}
+
+//========= TEXTS =========//
+@mixin ChakraPetch {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin RobotoMono {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+//========= OTHER =========//
+//@mixin container {
+//  padding-left: 24px;
+//  padding-right: 24px;
+//
+//  @include desktop {
+//    padding-left: 0;
+//    padding-right: 0;
+//  }
+//}
+//
+//@mixin inner() {
+//  @include desktop() {
+//    width: 1316px; //1316
+//    margin: 0 auto;
+//  }
+//}
+
+@mixin centerRow() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin centerColumn() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button() {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}

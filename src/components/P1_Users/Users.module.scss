@@ -1,10 +1,9 @@
 @import "../../assets/styles/app";
 
-.leader {
+.users {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-
 
   @include desktop {
     align-items: center;
@@ -16,6 +15,10 @@
     grid-template-columns: repeat(2, 1fr);
     border: 1px solid $color_lines;
     border-top: none;
+
+    &_3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     @include desktop {
       width: 440px;
@@ -74,6 +77,36 @@
       svg {
         width: 100%;
       }
+    }
+
+    .label {
+      align-self: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+      margin-top: 12px;
+      padding-left: 12px;
+    }
+
+    .count {
+      align-self: normal;
+      margin-top: 12px;
+      padding: 16px 12px;
+      border-top: 1px solid $color_lines;
+      border-bottom: 1px solid $color_lines;
+
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+
+      @include desktop {
+        border: 1px solid $color_lines;
+      }
+
     }
 
   }
