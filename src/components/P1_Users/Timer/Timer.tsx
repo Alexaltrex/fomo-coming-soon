@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 import {svgIcons} from "../../../assets/svgIcons";
 import {useState} from "react";
 import {ConnectWallet} from "../../P0_EnterCode/ConnectWallet/ConnectWallet";
+import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
 
 interface IValues {
     value: number
@@ -117,11 +118,11 @@ export const Timer = () => {
                     <p>SOL</p>
                 </div>
 
-                <button type="submit"
-                        className={style.stakeBtn}
-                >
-                    <span>STAKE</span>
-                </button>
+                <ButtonCustom label="STAKE"
+                              kind={ButtonEnum.contained}
+                              type="submit"
+                              className={style.stakeBtn}
+                />
 
             </form>
 

@@ -4,6 +4,8 @@ import {svgIcons} from "../../assets/svgIcons";
 import {clsx} from "clsx";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../store/rootStore";
+import {ButtonCustom} from "../_common/ButtonCustom/ButtonCustom";
+import {Logo} from "./Logo/Logo";
 
 export const Header = observer(() => {
     const {
@@ -15,11 +17,10 @@ export const Header = observer(() => {
 
     return (
         <header className={style.header}>
-            <Link to="/" className={style.logo}>
-                {svgIcons.logo_short}
-            </Link>
+            <Logo/>
 
             <div className={style.rightPart}>
+
                 {
                     address ? (
                         <div className={clsx(style.connectedItem, style.borderItem)}>
@@ -29,9 +30,9 @@ export const Header = observer(() => {
                             </p>
                         </div>
                     ) : (
-                        <button className={clsx(style.connectBtn, style.borderItem)}>
-                            <span>CONNECT WALLET</span>
-                        </button>
+                        <ButtonCustom label="CONNECT WALLET"
+                                      className={clsx(style.connectBtn, style.borderItem)}
+                        />
                     )
                 }
 
@@ -42,11 +43,15 @@ export const Header = observer(() => {
                             <p>{twitter}</p>
                         </div>
                     ) : (
-                        <button className={clsx(style.connectBtn, style.borderItem)}
-                                onClick={() => setTwitter("@KeanuReev")}
-                        >
-                            <span>CONNECT TWITTER</span>
-                        </button>
+                        <ButtonCustom label="CONNECT WALLET"
+                                      className={clsx(style.connectBtn, style.borderItem)}
+                                      onClick={() => setTwitter("@KeanuReev")}
+                        />
+                        // <button className={clsx(style.connectBtn, style.borderItem)}
+                        //         onClick={() => setTwitter("@KeanuReev")}
+                        // >
+                        //     <span>CONNECT TWITTER</span>
+                        // </button>
                     )
                 }
 

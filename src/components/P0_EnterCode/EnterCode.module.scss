@@ -7,14 +7,14 @@
   justify-content: center;
   position: relative;
 
-  @include desktop {
+  @include desktop2 {
     align-items: center;
   }
 
   &_paddingBottom {
     padding-bottom: 60px;
 
-    @include desktop {
+    @include desktop2 {
      padding-bottom: 0px;
     }
   }
@@ -24,7 +24,7 @@
     flex-direction: column;
 
     @include desktop {
-      width: 440px;
+      width: $k * 440px;
     }
 
     .inputWrapper {
@@ -82,9 +82,9 @@
     height: 18px;
     margin-top: 16px;
 
-    @include desktop {
-      width: 145px;
-      height: 24px;
+    @include desktop2 {
+      width: $k * 145px;
+      height: $k * 24px;
       margin-top: 0;
     }
 

@@ -1,0 +1,43 @@
+@import "../../../assets/styles/app";
+
+.logo {
+  @include centerRow;
+  height: 100%;
+  width: 48px;
+  border-right: 1px solid $color_lines;
+  flex-shrink: 0;
+  background-color: transparent;
+  transition: 0.3s;
+
+  @include desktop2 {
+    width: $k * 48px;
+  }
+
+  &:hover {
+    background-color: #222;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    @include desktop2 {
+      width: $k * 24px;
+      height: $k * 24px;
+    }
+
+    path {
+      transition: 0.3s;
+    }
+  }
+
+  &_mouseDown {
+    svg {
+      path {
+        fill: rgba(211, 249, 50, 0.6);
+      }
+    }
+  }
+
+
+}

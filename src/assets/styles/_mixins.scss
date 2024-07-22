@@ -5,11 +5,26 @@
   }
 }
 
+@mixin desktop2 {
+  @media all and (min-width: 585px) {
+    @content;
+  }
+}
+
 @mixin onlyMobile($displayType: block) {
   display: $displayType;
   @content;
 
   @include desktop() {
+    display: none;
+  }
+}
+
+@mixin onlyMobile2($displayType: block) {
+  display: $displayType;
+  @content;
+
+  @include desktop2() {
     display: none;
   }
 }
@@ -22,6 +37,16 @@
     @content;
   }
 }
+
+@mixin onlyDesktop2($displayType: block) {
+  display: none;
+
+  @include desktop2 {
+    display: $displayType;
+    @content;
+  }
+}
+
 
 //========= TEXTS =========//
 @mixin ChakraPetch {

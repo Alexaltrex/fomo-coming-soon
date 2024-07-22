@@ -9,12 +9,12 @@
   border-top: 1px solid $color_lines;
   display: flex;
 
-  @include desktop {
+  @include desktop2 {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 24px;
+    bottom: $k * 24px;
     border: 1px solid $color_lines;
-    width: 440px;
+    width: $k * 440px;
   }
 
   .left {
@@ -23,9 +23,18 @@
     align-items: center;
     border-right: 1px solid $color_lines;
 
+    @include desktop2 {
+      padding: $k * 10px $k * 12px;
+    }
+
     svg {
       width: 16px;
       height: 16px;
+
+      @include desktop2 {
+        width: $k * 16px;
+        height: $k * 16px;
+      }
     }
 
     span {
@@ -36,7 +45,13 @@
       text-align: right;
       color: $color_body_50;
       margin-left: 4px;
+
+      @include desktop2 {
+        font-size: $k * 12px;
+        margin-left: $k * 4px;
+      }
     }
+
 
   }
 
@@ -53,6 +68,11 @@
       text-align: right;
       color: $color_body_50;
       margin-left: 10px;
+
+      @include desktop2 {
+        font-size: $k * 12px;
+        margin-left: $k * 10px;
+      }
     }
   }
 

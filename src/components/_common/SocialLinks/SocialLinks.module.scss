@@ -5,14 +5,43 @@
   display: flex;
   justify-content: center;
 
+  @include desktop2 {
+    margin-top: $k * 24px;
+  }
+
   .link {
     @include centerRow;
     width: 48px;
     height: 48px;
     border: 1px solid $color_lines;
+    background-color: transparent;
+    transition: 0.3s;
+
+    @include desktop2 {
+      width: $k * 48px;
+      height: $k * 48px;
+    }
+
+    &:hover {
+      background-color: #222;
+    }
 
     &:not(:first-child) {
       margin-left: 12px;
+
+      @include desktop2 {
+        margin-left: $k * 12px;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      @include desktop2 {
+        width: $k * 16px;
+        height: $k * 16px;
+      }
     }
   }
 }

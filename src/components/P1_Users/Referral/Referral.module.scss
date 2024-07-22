@@ -4,8 +4,9 @@
   margin-top: 24px;
   width: 100%;
 
-  @include desktop {
-    width: 440px;
+  @include desktop2 {
+    margin-top: $k * 24px;
+    width: $k * 440px;
   }
 
 
@@ -13,12 +14,12 @@
     border-top: 1px solid $color_lines;
     border-bottom: 1px solid $color_lines;
 
-    @include desktop {
+    @include desktop2 {
       border: 1px solid $color_lines;
     }
 
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: $k * 40px;
 
       @include desktop {
         margin-top: 24px;
@@ -32,7 +33,7 @@
       padding-left: 12px;
 
       @include desktop {
-        height: 36px;
+        height: $k * 36px;
       }
 
       p {
@@ -41,6 +42,10 @@
         line-height: 140%;
         text-transform: uppercase;
         color: $color_main;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
       }
     }
 
@@ -48,11 +53,19 @@
       padding: 12px;
       border-top: 1px solid $color_lines;
 
+      @include desktop2 {
+        padding: $k * 12px;
+      }
+
       p {
         font-weight: 400;
         font-size: 12px;
         line-height: 140%;
         color: $color_body_50;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
       }
 
     }
@@ -66,6 +79,10 @@
         position: relative;
         padding: 4px 12px;
 
+        @include desktop2 {
+          padding: $k * 4px $k * 12px;
+        }
+
         &:not(:first-child) {
           border-left: 1px solid $color_lines;
         }
@@ -75,6 +92,10 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_body_50;
+
+          @include desktop2 {
+            font-size: $k * 12px;
+          }
 
           &:last-child {
             color: $color_main_100;
@@ -92,8 +113,17 @@
             height: 4px;
             background: $color_main;
 
+            @include desktop2 {
+              width: $k * 4px;
+              height: $k * 4px;
+            }
+
             &:not(:first-child) {
               margin-left: 2px;
+
+              @include desktop2 {
+                margin-left: $k * 2px;
+              }
             }
           }
         }
@@ -106,9 +136,9 @@
       display: flex;
       flex-direction: column;
 
-      @include desktop {
+      @include desktop2 {
         flex-direction: row;
-        height: 36px;
+        height: $k * 36px;
       }
 
 
@@ -116,7 +146,7 @@
         height: 48px;
         border-top: 1px solid $color_lines;
 
-        @include desktop {
+        @include desktop2 {
           height: 100%;
         }
       }
@@ -129,6 +159,10 @@
           width: 70px;
           border-right: 1px solid $color_lines;
 
+          @include desktop2 {
+            width: $k * 70px;
+          }
+
           p {
             margin-left: 4px;
             font-weight: 400;
@@ -137,6 +171,10 @@
             text-transform: uppercase;
             text-align: right;
             color: $color_body_50;
+
+            @include desktop2 {
+              font-size: $k * 12px;
+            }
           }
         }
 
@@ -151,42 +189,24 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_main_100;
-        }
 
-        .copyBtn {
-          @include button;
-          @include centerRow;
-          width: 48px;
-
-          @include desktop {
-            width: 36px;
+          @include desktop2 {
+            padding: 0 $k * 12px;
+            font-size: $k * 12px;
           }
         }
 
-
-        @include desktop {
+        @include desktop2 {
           flex-grow: 1;
         }
       }
 
       .generateBtn {
-        @include button;
-        @include centerRow;
         border-top: 1px solid $color_lines;
-        background: $color_main_10;
 
-        @include desktop {
+        @include desktop2 {
           flex-shrink: 0;
-          width: 164px;
-        }
-
-        span {
-          font-weight: 700;
-          font-size: 12px;
-          line-height: 140%;
-          text-transform: uppercase;
-          text-align: center;
-          color: $color_main;
+          width: $k * 164px;
         }
       }
 
@@ -204,6 +224,12 @@
       text-transform: uppercase;
       color: $color_main_100;
 
+      @include desktop2 {
+        height: $k * 36px;
+        padding: $k * 12px $k * 10px;
+        font-size: $k * 12px;
+      }
+
       span {
         color: $color_main;
       }
@@ -216,15 +242,19 @@
       padding: 12px 0;
       border-top: 1px solid $color_lines;
 
+      @include desktop2 {
+        padding: $k * 12px 0;
+      }
+
       .schemeMobile {
-        @include onlyMobile();
+        @include onlyMobile2();
         width: 360px;
         height: auto;
       }
 
       .schemeDesktop {
-        @include onlyDesktop();
-        width: 440px;
+        @include onlyDesktop2();
+        width: $k * 440px;
         height: auto;
       }
 
@@ -241,6 +271,10 @@
     text-transform: uppercase;
     color: $color_body_50;
     text-align: center;
+
+    @include desktop2 {
+      font-size: $k * 12px;
+    }
 
     span {
       color: rgba(211, 249, 50, 0.4);

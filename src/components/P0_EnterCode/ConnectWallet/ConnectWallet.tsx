@@ -2,9 +2,9 @@ import style from "./ConnectWallet.module.scss";
 import {svgIcons} from "../../../assets/svgIcons";
 import {FC, useState} from "react";
 import {icons} from "./icons";
-import {Link} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../../store/rootStore";
+import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
 
 interface IConnectWallet {
     onClose: () => void
@@ -64,11 +64,11 @@ export const ConnectWallet: FC<IConnectWallet> = observer(({
 
                 {
                     !showWalletList ? (
-                        <button className={style.connectBtn}
-                                onClick={() => setShowWalletList(true)}
-                        >
-                            <span>Connect wallet</span>
-                        </button>
+                        <ButtonCustom label="Connect wallet"
+                                      kind={ButtonEnum.contained}
+                                      className={style.connectBtn}
+                                      onClick={() => setShowWalletList(true)}
+                        />
                     ) : (
                         <>
                             {

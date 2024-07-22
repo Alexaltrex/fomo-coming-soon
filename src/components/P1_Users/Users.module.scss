@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
 
-  @include desktop {
+  @include desktop2 {
     align-items: center;
   }
 
@@ -20,14 +20,23 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @include desktop {
-      width: 440px;
+    @include desktop2 {
+      width: $k * 440px;
     }
 
     .btn {
       @include button;
       @include centerRow;
       height: 36px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: #222;
+      }
+
+      @include desktop2 {
+        height: $k * 36px;
+      }
 
       &:not(:first-child) {
         border-left: 1px solid $color_lines;
@@ -40,6 +49,10 @@
         text-transform: uppercase;
         text-align: center;
         color: $color_body_50;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
       }
 
       &_selected {
@@ -60,6 +73,10 @@
 
     &_padding {
       padding: 24px 0;
+
+      @include desktop2 {
+        padding: $k * 24px 0;
+      }
     }
 
     .title {
@@ -68,10 +85,15 @@
       height: 18px;
       margin-top: 16px;
 
-      @include desktop {
+      @include desktop2 {
         width: 145px;
         height: 24px;
         margin-top: 0;
+
+        @include desktop2 {
+          width: $k * 145px;
+          height: $k * 24px;
+        }
       }
 
       svg {
@@ -88,6 +110,12 @@
       color: $color_main_100;
       margin-top: 12px;
       padding-left: 12px;
+
+      @include desktop2 {
+        font-size: $k * 12px;
+        margin-top: $k * 12px;
+        padding-left: $k * 12px;
+      }
     }
 
     .count {
@@ -103,8 +131,11 @@
       text-transform: uppercase;
       color: $color_main_100;
 
-      @include desktop {
+      @include desktop2 {
+        margin-top: $k * 12px;
+        padding: $k * 16px $k * 12px;
         border: 1px solid $color_lines;
+        font-size: $k * 12px;
       }
 
     }

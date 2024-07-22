@@ -3,8 +3,8 @@
 .timer {
   align-self: normal;
 
-  @include desktop {
-    width: 440px;
+  @include desktop2 {
+    width: $k * 440px;
     align-self: center;
   }
 
@@ -13,13 +13,17 @@
     display: flex;
     justify-content: center;
 
+    @include desktop2 {
+      margin-top: $k * 24px;
+    }
+
     .timerItem {
 
       &:not(:first-child) {
         margin-left: 12px;
 
         @include desktop {
-          margin-left: 16px;
+          margin-left: $k * 16px;
         }
       }
 
@@ -33,14 +37,18 @@
           width: 27px;
           height: 44px;
 
-          @include desktop {
-            border-radius: 3px;
-            width: 40px;
-            height: 64px;
+          @include desktop2 {
+            border-radius: $k * 3px;
+            width: $k * 40px;
+            height: $k * 64px;
           }
 
           &:not(:first-child) {
             margin-left: 4px;
+
+            @include desktop2 {
+              margin-left: $k * 4px;
+            }
           }
 
           p {
@@ -49,8 +57,8 @@
             line-height: 140%;
             color: $color_main_100;
 
-            @include desktop {
-              font-size: 40px;
+            @include desktop2 {
+              font-size: $k * 40px;
             }
           }
         }
@@ -64,6 +72,10 @@
         text-transform: uppercase;
         text-align: center;
         color: $color_body_50;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
       }
     }
   }
@@ -76,6 +88,11 @@
     text-transform: uppercase;
     text-align: center;
     color: $color_main_100;
+
+    @include desktop2 {
+      margin-top: $k * 24px;
+      font-size: $k * 12px;
+    }
   }
 
   .totalStakedValue {
@@ -86,8 +103,9 @@
     color: $color_main;
     text-align: center;
 
-    @include desktop {
-      font-size: 40px;
+    @include desktop2 {
+      margin-top: $k * 12px;
+      font-size: $k * 40px;
     }
   }
 
@@ -99,6 +117,11 @@
     text-transform: uppercase;
     text-align: center;
     color: $color_body_50;
+
+    @include desktop2 {
+      margin-top: $k * 4px;
+      font-size: $k * 12px;
+    }
   }
 
   .formLabel {
@@ -109,6 +132,12 @@
     line-height: 140%;
     text-transform: uppercase;
     color: $color_main_100;
+
+    @include desktop2 {
+      margin-top: $k * 24px;
+      padding-left: $k * 12px;
+      font-size: $k * 12px;
+    }
   }
 
   .form {
@@ -117,11 +146,20 @@
     height: 48px;
     border: 1px solid $color_lines;
 
+    @include desktop2 {
+      margin-top: $k * 12px;
+      height: $k * 48px;
+    }
+
     .inputWrapper {
       flex-grow: 1;
       display: flex;
       align-items: center;
       padding: 0 12px;
+
+      @include desktop2 {
+        padding: 0 $k * 12px;
+      }
 
       input {
         flex-shrink: 1;
@@ -133,14 +171,21 @@
         line-height: 140%;
         color: $color_main_100;
         width: 100%;
-        //min-width: 0;
-        //max-width: 100%;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
+
 
         &::placeholder {
           font-weight: 400;
           font-size: 12px;
           line-height: 140%;
           color: $color_body_50;
+
+          @include desktop2 {
+            font-size: $k * 12px;
+          }
         }
 
         &::-webkit-outer-spin-button,
@@ -159,25 +204,21 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_main_100;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
       }
     }
 
     .stakeBtn {
-      @include centerRow;
-      @include button;
       flex-shrink: 0;
-      background: $color_main_10;
       width: 85px;
       height: 100%;
       border-left: 1px solid $color_lines;
 
-      span {
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 140%;
-        text-transform: uppercase;
-        text-align: center;
-        color: $color_main;
+      @include desktop2 {
+        width: $k * 85px;
       }
     }
 

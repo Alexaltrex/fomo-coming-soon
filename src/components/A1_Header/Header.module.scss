@@ -6,12 +6,8 @@
   border-bottom: 1px solid $color_lines;
   display: flex;
 
-  .logo {
-    @include centerRow;
-    height: 100%;
-    width: 48px;
-    border-right: 1px solid $color_lines;
-    flex-shrink: 0;
+  @include desktop2 {
+    height: $k * 48px;
   }
 
   .rightPart {
@@ -35,11 +31,20 @@
       height: 100%;
       width: 155px;
 
-      @include desktop {
-        width: 160px;
+      @include desktop2 {
+        width: $k * 160px;
       }
 
       svg {
+        width: 16px;
+        height: 16px;
+
+        @include desktop2 {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+
+
         path {
           fill: $color_main;
           fill-opacity: 1;
@@ -52,6 +57,11 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_main_100;
+
+        @include desktop2 {
+          margin-left: $k * 8px;
+          font-size: $k * 12px;
+        }
       }
 
 
@@ -59,23 +69,11 @@
 
 
     .connectBtn {
-      @include button;
-      @include centerRow;
-      //border-left: 1px solid $color_lines;
       height: 100%;
       width: 155px;
 
-      @include desktop {
-        width: 160px;
-      }
-
-      span {
-        font-weight: 700;
-        font-size: 12px;
-        text-transform: uppercase;
-        text-align: center;
-        color: $color_main;
-
+      @include desktop2 {
+        width: $k * 160px;
       }
 
     }

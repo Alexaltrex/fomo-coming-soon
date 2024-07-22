@@ -2,14 +2,15 @@ import style from "./Referral.module.scss"
 import {svgIcons} from "../../../assets/svgIcons";
 import schemeMobile from "../../../assets/png/scheme_mobile.png";
 import schemeDesktop from "../../../assets/png/scheme_desktop.png";
-import {useEffect, useState} from "react";
 import {CopyButton} from "../Tasks/CopyButton/CopyButton";
+import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
+
 export const Referral = () => {
 
     const levels = [35, 3.5, 3, 2, 1]
 
    const onCopy = () => {
-
+       console.log("copy")
    }
 
     return (
@@ -61,14 +62,15 @@ export const Referral = () => {
                             Z7XMLk6yMLk6H
                         </p>
 
-                        <CopyButton
-                            //onClick={onCopy}
+                        <CopyButton onClick={onCopy}
                         />
 
                     </div>
-                    <button className={style.generateBtn}>
-                        <span>GENERATE NEW</span>
-                    </button>
+
+                    <ButtonCustom label="GENERATE NEW"
+                                  className={style.generateBtn}
+                                  kind={ButtonEnum.contained}
+                    />
                 </div>
 
                 <p className={style.useCount}>

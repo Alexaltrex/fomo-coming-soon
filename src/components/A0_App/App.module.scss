@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
 
-  @include desktop {
+  @include desktop2 {
     height: 100vh;
   }
 
@@ -14,8 +14,9 @@
     flex-grow: 1;
     display: flex;
 
-    @include desktop {
-      height: calc(100vh - 48px);
+    @include desktop2 {
+      height: calc(100vh - $k * 48px);
+
     }
 
 
@@ -24,6 +25,8 @@
       display: flex;
       flex-direction: column;
       overflow: auto;
+
+
 
     }
 

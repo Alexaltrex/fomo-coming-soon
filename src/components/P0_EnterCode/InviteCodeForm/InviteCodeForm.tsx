@@ -2,6 +2,8 @@ import {FormikErrors, FormikHelpers} from "formik/dist/types";
 import {useFormik} from "formik";
 import style from "./InviteCodeForm.module.scss";
 import {FC} from "react";
+import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
+
 interface IValues {
     inviteCode: string
 }
@@ -51,11 +53,11 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
                 />
             </div>
 
-            <button type="submit"
-                    className={style.continueBtn}
-            >
-                <span>Continue</span>
-            </button>
+            <ButtonCustom label="Continue"
+                          kind={ButtonEnum.contained}
+                          type="submit"
+                          className={style.continueBtn}
+            />
 
         </form>
     )

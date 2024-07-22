@@ -1,12 +1,12 @@
 @import "../../assets/styles/app";
 
 .leftPanel {
-  @include onlyDesktop(flex);
+  @include onlyDesktop2(flex);
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   height: 100%;
-  width: 48px;
+  width: $k * 48px;
   padding-bottom: 8px;
   border-right: 1px solid $color_lines;
 
@@ -14,7 +14,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 12px;
+    padding-top: $k * 12px;
 
     &::before {
       position: absolute;
@@ -24,19 +24,30 @@
       left: 50%;
       transform: translateX(-50%);
       height: 1px;
-      width: 32px;
+      width: $k * 32px;
       background: $color_lines;
     }
 
 
     .link {
       @include centerRow;
-      width: 32px;
-      height: 32px;
+      width: $k * 32px;
+      height: $k * 32px;
       border: 1px solid $color_lines;
+      background-color: transparent;
+      transition: 0.3s;
 
       &:not(:first-child) {
-        margin-top: 8px;
+        margin-top: $k * 8px;
+      }
+
+      &:hover {
+        background-color: #222;
+      }
+
+      svg {
+        width: $k * 16px;
+        height: $k * 16px;
       }
     }
   }

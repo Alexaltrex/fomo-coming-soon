@@ -7,12 +7,12 @@
   background-color: transparent;
   transition: 0.3s;
 
-  @include desktop {
-    width: 36px;
+  @include desktop2 {
+    width: $k * 36px;
   }
 
   &:hover {
-    @include desktop {
+    @include desktop2 {
       background: #222;
     }
   }
