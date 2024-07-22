@@ -43,15 +43,10 @@ export const Header = observer(() => {
                             <p>{twitter}</p>
                         </div>
                     ) : (
-                        <ButtonCustom label="CONNECT WALLET"
+                        <ButtonCustom label="CONNECT TWITTER"
                                       className={clsx(style.connectBtn, style.borderItem)}
                                       onClick={() => setTwitter("@KeanuReev")}
                         />
-                        // <button className={clsx(style.connectBtn, style.borderItem)}
-                        //         onClick={() => setTwitter("@KeanuReev")}
-                        // >
-                        //     <span>CONNECT TWITTER</span>
-                        // </button>
                     )
                 }
 
