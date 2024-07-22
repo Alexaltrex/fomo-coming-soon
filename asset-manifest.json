@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/fomo-coming-soon/static/css/main.faab8634.css",
-    "main.js": "/fomo-coming-soon/static/js/main.67fbdc0e.js",
+    "main.css": "/fomo-coming-soon/static/css/main.f0bcf207.css",
+    "main.js": "/fomo-coming-soon/static/js/main.179d2a40.js",
     "static/js/453.727daab6.chunk.js": "/fomo-coming-soon/static/js/453.727daab6.chunk.js",
     "static/media/scheme_desktop.png": "/fomo-coming-soon/static/media/scheme_desktop.c4bf91d4e2fee34cff1e.png",
     "static/media/scheme_mobile.png": "/fomo-coming-soon/static/media/scheme_mobile.0d9c83ee0770c5aafddd.png",
     "index.html": "/fomo-coming-soon/index.html",
-    "main.faab8634.css.map": "/fomo-coming-soon/static/css/main.faab8634.css.map",
-    "main.67fbdc0e.js.map": "/fomo-coming-soon/static/js/main.67fbdc0e.js.map",
+    "main.f0bcf207.css.map": "/fomo-coming-soon/static/css/main.f0bcf207.css.map",
+    "main.179d2a40.js.map": "/fomo-coming-soon/static/js/main.179d2a40.js.map",
     "453.727daab6.chunk.js.map": "/fomo-coming-soon/static/js/453.727daab6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.faab8634.css",
-    "static/js/main.67fbdc0e.js"
+    "static/css/main.f0bcf207.css",
+    "static/js/main.179d2a40.js"
   ]
 }
