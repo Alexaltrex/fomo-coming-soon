@@ -8,6 +8,18 @@
     align-self: center;
   }
 
+  .timerWrapperMobile {
+    @include onlyMobile2(flex);
+    margin-top: 24px;
+    justify-content: center;
+  }
+
+  .timerWrapperDesktop {
+    @include onlyDesktop2(flex);
+    margin-top: $k * 24px;
+    justify-content: center;
+  }
+
   .timerValues {
     margin-top: 24px;
     display: flex;

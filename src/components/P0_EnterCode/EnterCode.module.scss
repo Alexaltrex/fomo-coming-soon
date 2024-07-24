@@ -15,30 +15,41 @@
     padding-bottom: 60px;
 
     @include desktop2 {
-     padding-bottom: 0;
+      padding-bottom: 0;
     }
   }
 
   .title {
     align-self: center;
-    width: 113px;
-    height: 18px;
+    width: 201px;
+    height: 32px;
     margin-top: 16px;
 
     @include desktop2 {
-      width: $k * 145px;
-      height: $k * 24px;
+      width: $k * 440px;
+      height: $k * 72px;
       margin-top: 0;
     }
 
     svg {
       width: 100%;
+      height: 100%;
     }
   }
 
-  .tickWrapper {
-    padding: 40px;
-    background-color: #FFF;
+  .subTitle {
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+    text-align: center;
+
+    @include desktop2 {
+      font-size: $k * 18px;
+      margin-top: $k * 12px;
+    }
   }
 
 }

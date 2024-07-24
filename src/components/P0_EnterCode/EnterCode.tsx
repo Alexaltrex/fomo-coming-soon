@@ -5,15 +5,10 @@ import {ConnectWallet} from "./ConnectWallet/ConnectWallet";
 import React, {useState} from "react";
 import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
 import {useNavigate} from "react-router-dom";
-// @ts-ignore
-import {FlipItem} from "../_common/FlipItem";
 
 export const EnterCode = () => {
     const [connectWallet, setConnectWallet] = useState(false)
     const navigate = useNavigate();
-
-    //const [count, setCount] = useState(1);
-
 
     return (
         <div className={style.enterCode}>
@@ -22,16 +17,11 @@ export const EnterCode = () => {
                 {svgIcons.logo_full}
             </div>
 
+            <p className={style.subTitle}>
+                Memes meets innovation on solana
+            </p>
+
             <InviteCodeForm onClick={() => setConnectWallet(true)}/>
-
-            {/*<div className={style.tickWrapper}*/}
-            {/*>*/}
-            {/*    <FlipItem value={count}/>*/}
-            {/*</div>*/}
-
-            {/*<button onClick={() => setCount(count + 1)}>*/}
-            {/*    add*/}
-            {/*</button>*/}
 
             <SocialLinks/>
 

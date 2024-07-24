@@ -6,9 +6,13 @@ import {useState} from "react";
 import {ConnectWallet} from "../../P0_EnterCode/ConnectWallet/ConnectWallet";
 import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
 
+import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
+import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+
 interface IValues {
     value: number
 }
+
 
 export const Timer = () => {
     const [connectWallet, setConnectWallet] = useState(false)
@@ -51,44 +55,94 @@ export const Timer = () => {
     return (
         <div className={style.timer}>
 
-            <div className={style.timerValues}>
-                {
-                    [
-                        {
-                            value: days,
-                            label: "days"
-                        },
-                        {
-                            value: hours,
-                            label: "hours"
-                        },
-                        {
-                            value: mins,
-                            label: "mins"
-                        },
-                        {
-                            value: secs,
-                            label: "secs"
-                        },
-                    ].map(({value, label}, key) => (
-                        <div key={key}
-                             className={style.timerItem}
-                        >
-                            <div className={style.values}>
-                                <div>
-                                    <p>{value[0]}</p>
-                                </div>
-                                <div>
-                                    <p>{value[1]}</p>
-                                </div>
-                            </div>
-                            <p className={style.label}>
-                                {label}
-                            </p>
-                        </div>
-                    ))
-                }
+            <div className={style.timerWrapperMobile}>
+                <FlipClockCountdown to={new Date().getTime() + 24 * 3600 * 1000 + 5000}
+                                    labels={['Days', 'Hours', 'Mins', 'Sec']}
+                                    labelStyle={{
+                                        fontFamily: "Space Mono",
+                                        fontSize: "12px",
+                                        color: "rgba(255, 255, 255, 0.5)",
+                                        textTransform: "uppercase",
+                                    }}
+                                    showSeparators={false}
+                                    digitBlockStyle={{
+                                        background: "#101011",
+                                        width: "27px",
+                                        height: "44px",
+                                        fontFamily: "Space Mono",
+                                        fontSize: "26px",
+                                        color: "#FFF",
+                                    }}
+
+                >
+                    <span>The countdown is complete</span>
+                </FlipClockCountdown>
             </div>
+
+            <div className={style.timerWrapperDesktop}>
+                <FlipClockCountdown to={new Date().getTime() + 24 * 3600 * 1000 + 5000}
+                                    labels={['Days', 'Hours', 'Mins', 'Sec']}
+                                    labelStyle={{
+                                        fontFamily: "Space Mono",
+                                        fontSize: `${1.2 * 12}px`,
+                                        color: "rgba(255, 255, 255, 0.5)",
+                                        textTransform: "uppercase",
+                                    }}
+                                    showSeparators={false}
+                                    digitBlockStyle={{
+                                        background: "#101011",
+                                        width: `${1.2 * 40}px`,
+                                        height: `${1.2 * 64}px`,
+                                        fontFamily: "Space Mono",
+                                        fontSize: `${1.2 * 40}px`,
+                                        color: "#FFF",
+                                    }}
+                                    dividerStyle={{
+                                        color: "#101011"
+                                    }}
+                >
+                    <span>The countdown is complete</span>
+                </FlipClockCountdown>
+            </div>
+
+            {/*<div className={style.timerValues}>*/}
+            {/*    {*/}
+            {/*        [*/}
+            {/*            {*/}
+            {/*                value: days,*/}
+            {/*                label: "days"*/}
+            {/*            },*/}
+            {/*            {*/}
+            {/*                value: hours,*/}
+            {/*                label: "hours"*/}
+            {/*            },*/}
+            {/*            {*/}
+            {/*                value: mins,*/}
+            {/*                label: "mins"*/}
+            {/*            },*/}
+            {/*            {*/}
+            {/*                value: secs,*/}
+            {/*                label: "secs"*/}
+            {/*            },*/}
+            {/*        ].map(({value, label}, key) => (*/}
+            {/*            <div key={key}*/}
+            {/*                 className={style.timerItem}*/}
+            {/*            >*/}
+            {/*                <div className={style.values}>*/}
+            {/*                    <div>*/}
+            {/*                        <p>{value[0]}</p>*/}
+            {/*                    </div>*/}
+            {/*                    <div>*/}
+            {/*                        <p>{value[1]}</p>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*                <p className={style.label}>*/}
+            {/*                    {label}*/}
+            {/*                </p>*/}
+            {/*            </div>*/}
+            {/*        ))*/}
+            {/*    }*/}
+            {/*</div>*/}
 
             <p className={style.label}>
                 Total staked
@@ -111,7 +165,7 @@ export const Timer = () => {
             >
                 <div className={style.inputWrapper}>
                     <input type="number"
-                           //placeholder="Invite code"
+                        //placeholder="Invite code"
                            {...formik.getFieldProps('value')}
 
                     />
