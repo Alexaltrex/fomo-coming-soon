@@ -60,7 +60,11 @@ export const Lines: FC<ILines> = ({
                                                  }}
                                             >
                                                 <RunningStringItem item={
-                                                    <div className={style.itemHorizontal}>
+                                                    <div className={style.itemHorizontal}
+                                                         style={{
+                                                             width: `${count * 80}px`
+                                                         }}
+                                                    >
                                                         <div className={style.gradient}
                                                              style={{
                                                                  width: `${getRandomNumber(40, 160)}px`
@@ -69,7 +73,7 @@ export const Lines: FC<ILines> = ({
                                                     </div>
                                                 }
                                                                    count={1}
-                                                                   duration={getRandomNumber(8, 16)}
+                                                                   duration={(count / 13) * getRandomNumber(8, 16)}
                                                                    forward={Math.random() >= 0.5}
                                                 />
                                             </div>
