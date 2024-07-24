@@ -1,16 +1,8 @@
 import style from "./Tasks.module.scss";
-import {observer} from "mobx-react-lite";
-import {useStore} from "../../../store/rootStore";
 import {svgIcons} from "../../../assets/svgIcons";
 import {clsx} from "clsx";
 
-export const Tasks = observer(() => {
-    const {
-        appStore: {
-            tasks, setTasks
-        }
-    } = useStore()
-
+export const Tasks = () => {
 
     return (
         <div className={style.tasks}>
@@ -61,18 +53,17 @@ export const Tasks = observer(() => {
                     ].map(({icon, label, labelDone, done}, key) => (
                         <div key={key}
                                 className={style.listItem}
-                                //onClick={() => setTasks(tasks.map((value, index) => index === key ? true : value))}
                         >
                             <div className={clsx({
                                 [style.icon]: true,
-                                [style.icon_done]: tasks[key],
+                                [style.icon_done]: done,
                             })}>
                                 {done ? svgIcons.check : icon}
                             </div>
 
                             <p className={clsx({
                                 [style.label]: true,
-                                [style.label_done]: tasks[key],
+                                [style.label_done]: done,
                             })}>
                                 {done ? labelDone : label}
                             </p>
@@ -83,4 +74,4 @@ export const Tasks = observer(() => {
 
         </div>
     )
-})
+}

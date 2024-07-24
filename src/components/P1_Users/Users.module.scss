@@ -10,6 +10,7 @@
   }
 
   .tabs {
+    background-color: $color_bg_and_text;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -119,6 +120,7 @@
     }
 
     .count {
+      background-color: $color_bg_and_text;
       align-self: normal;
       margin-top: 12px;
       padding: 16px 12px;

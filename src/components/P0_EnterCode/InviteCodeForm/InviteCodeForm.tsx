@@ -53,11 +53,15 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
                 />
             </div>
 
-            <ButtonCustom label="Continue"
-                          kind={ButtonEnum.contained}
-                          type="submit"
-                          className={style.continueBtn}
-            />
+            <div className={style.continueBtnWrapper}>
+                <ButtonCustom label="Continue"
+                              kind={ButtonEnum.contained}
+                              type="submit"
+                              className={style.continueBtn}
+                />
+            </div>
+
+
 
         </form>
     )

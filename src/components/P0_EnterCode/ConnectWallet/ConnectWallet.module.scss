@@ -1,88 +1,55 @@
 @import "../../../assets/styles/app";
 
 .connectWallet {
-  @include centerColumn;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: $color_pop_up_bg;
-  backdrop-filter: blur(5px);
+  background: $color_bg_and_text;
+  //backdrop-filter: blur(5px);
 
-  & > svg {
-    width: 113px;
-    height: 18px;
-
-    @include desktop2 {
-      width: $k * 145px;
-      height: $k * 24px;
-    }
-  }
-
-  .card {
-    margin-top: 24px;
-    border-top: 1px solid $color_lines;
+  .content {
+    @include centerColumn;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
 
-    @include desktop2 {
-      margin-top: $k * 24px;
-      border: 1px solid $color_lines;
-      width: $k * 440px;
-    }
-
-    .cardHeader {
-      display: flex;
-      align-items: center;
-      height: 40px;
-      padding-left: 12px;
-      border-bottom: 1px solid $color_lines;
+    & > svg {
+      width: 113px;
+      height: 18px;
 
       @include desktop2 {
-        height: $k * 40px;
-        padding-left: $k * 12px;
+        width: $k * 145px;
+        height: $k * 24px;
+      }
+    }
+
+    .card {
+      margin-top: 24px;
+      border-top: 1px solid $color_lines;
+      width: 100%;
+      background: $color_bg_and_text;
+
+      @include desktop2 {
+        margin-top: $k * 24px;
+        border: 1px solid $color_lines;
+        width: $k * 440px;
       }
 
-      svg {
-        width: 16px;
-        height: 16px;
+      .cardHeader {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding-left: 12px;
+        border-bottom: 1px solid $color_lines;
 
         @include desktop2 {
-          width: $k * 16px;
-          height: $k * 16px;
-        }
-      }
-
-      span {
-        flex-grow: 1;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 140%;
-        text-transform: uppercase;
-        color: $color_main_100;
-        margin-left: 8px;
-
-        @include desktop2 {
-          font-size: $k * 12px;
-          margin-left: $k * 8px;
-        }
-      }
-
-      button {
-        @include button;
-        @include centerRow;
-        width: 36px;
-        height: 100%;
-        border-left: 1px solid $color_lines;
-        background-color: transparent;
-        transition: 0.3s;
-
-        @include desktop2 {
-          width: $k * 36px;
-        }
-
-        &:hover {
-          background-color: #222;
+          height: $k * 40px;
+          padding-left: $k * 12px;
         }
 
         svg {
@@ -94,99 +61,37 @@
             height: $k * 16px;
           }
         }
-      }
 
-    }
-
-    .description {
-      padding: 12px;
-      border: 1px solid $color_lines;
-      display: flex;
-
-      @include desktop2 {
-        padding: $k * 12px;
-      }
-
-      .icon {
-        flex-shrink: 0;
-        @include centerRow;
-        border: 1px solid $color_lines;
-        width: 32px;
-        height: 32px;
-        margin-right: 12px;
-
-        @include desktop2 {
-          margin-right: $k * 12px;
-          width: $k * 50px;
-          height: $k * 50px;
-        }
-
-        svg {
-          width: 16px;
-          height: 16px;
+        span {
+          flex-grow: 1;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+          margin-left: 8px;
 
           @include desktop2 {
-            width: $k * 24px;
-            height: $k * 24px;
+            font-size: $k * 12px;
+            margin-left: $k * 8px;
           }
         }
-      }
 
-      p {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 140%;
-        color: $color_body_50;
-
-        @include desktop2 {
-          font-size: $k * 12px;
-        }
-      }
-
-    }
-
-    .connectBtn {
-      width: 100%;
-      border-top: 1px solid $color_lines;
-      height: 48px;
-
-      @include desktop2 {
-        height: $k * 48px;
-      }
-    }
-
-    .walletList {
-
-      button {
-        @include button;
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 48px;
-        padding: 8px 12px;
-        border-bottom: 1px solid $color_lines;
-        background-color: transparent;
-        transition: 0.3s;
-
-        &:hover {
-          background-color: #222;
-        }
-
-        @include desktop2 {
-          height: $k * 48px;
-          padding: $k * 8px $k * 12px;
-        }
-
-        .iconWrapper {
+        button {
+          @include button;
           @include centerRow;
-          border: 1px solid $color_lines;
-          width: 32px;
-          height: 32px;
+          width: 36px;
+          height: 100%;
+          border-left: 1px solid $color_lines;
+          background-color: transparent;
+          transition: 0.3s;
 
           @include desktop2 {
-            width: $k * 32px;
-            height: $k * 32px;
+            width: $k * 36px;
+          }
+
+          &:hover {
+            background-color: #222;
           }
 
           svg {
@@ -200,53 +105,161 @@
           }
         }
 
-        .label {
+      }
+
+      .description {
+        padding: 12px;
+        border: 1px solid $color_lines;
+        display: flex;
+
+        @include desktop2 {
+          padding: $k * 12px;
+        }
+
+        .icon {
+          flex-shrink: 0;
+          @include centerRow;
+          border: 1px solid $color_lines;
+          width: 32px;
+          height: 32px;
+          margin-right: 12px;
+
+          @include desktop2 {
+            margin-right: $k * 12px;
+            width: $k * 50px;
+            height: $k * 50px;
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+
+            @include desktop2 {
+              width: $k * 24px;
+              height: $k * 24px;
+            }
+          }
+        }
+
+        p {
           font-weight: 400;
           font-size: 12px;
           line-height: 140%;
           color: $color_body_50;
-          margin-left: 12px;
 
           @include desktop2 {
-            font-size: $k * 12px;
-            margin-left: $k * 12px;
-          }
-        }
-
-        .detected {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 12px;
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 140%;
-          text-transform: uppercase;
-          color: $color_body_50;
-
-          @include desktop2 {
-            right: $k * 12px;
             font-size: $k * 12px;
           }
         }
 
-
       }
-    }
 
-    .signButton {
-      @include button;
-      @include centerRow;
-      width: 100%;
-      background: $color_white_3;
-      height: 48px;
-      transition: 0.3s;
+      .connectBtn {
+        width: 100%;
+        border-top: 1px solid $color_lines;
+        height: 48px;
 
-      &:hover {
-        background-color: rgba(211, 249, 50, 0.2);
+        @include desktop2 {
+          height: $k * 48px;
+        }
       }
-    }
 
+      .walletList {
+
+        button {
+          @include button;
+          width: 100%;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          padding: 8px 12px;
+          border-bottom: 1px solid $color_lines;
+          background-color: transparent;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: #222;
+          }
+
+          @include desktop2 {
+            height: $k * 48px;
+            padding: $k * 8px $k * 12px;
+          }
+
+          .iconWrapper {
+            @include centerRow;
+            border: 1px solid $color_lines;
+            width: 32px;
+            height: 32px;
+
+            @include desktop2 {
+              width: $k * 32px;
+              height: $k * 32px;
+            }
+
+            svg {
+              width: 16px;
+              height: 16px;
+
+              @include desktop2 {
+                width: $k * 16px;
+                height: $k * 16px;
+              }
+            }
+          }
+
+          .label {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+            margin-left: 12px;
+
+            @include desktop2 {
+              font-size: $k * 12px;
+              margin-left: $k * 12px;
+            }
+          }
+
+          .detected {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color: $color_body_50;
+
+            @include desktop2 {
+              right: $k * 12px;
+              font-size: $k * 12px;
+            }
+          }
+
+
+        }
+      }
+
+      .signButton {
+        @include button;
+        @include centerRow;
+        width: 100%;
+        background: $color_white_3;
+        height: 48px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: rgba(211, 249, 50, 0.2);
+        }
+      }
+
+    }
   }
+
+
+
 
 }

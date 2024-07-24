@@ -4,6 +4,7 @@
   margin-top: 24px;
   border-top: 1px solid $color_lines;
   border-bottom: 1px solid $color_lines;
+  background-color: $color_bg_and_text;
   width: 100%;
 
   @include desktop2 {
