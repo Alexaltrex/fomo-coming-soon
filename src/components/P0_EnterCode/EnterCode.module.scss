@@ -15,64 +15,7 @@
     padding-bottom: 60px;
 
     @include desktop2 {
-     padding-bottom: 0px;
-    }
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-
-    @include desktop {
-      width: $k * 440px;
-    }
-
-    .inputWrapper {
-      margin-top: 24px;
-      border: 1px solid $color_lines;
-
-      input {
-        padding: 16px 12px;
-        width: 100%;
-        background: none;
-        border: none;
-        outline: none;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 140%;
-        color: $color_main_100;
-
-
-
-        &::placeholder {
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 140%;
-          color: $color_body_50;
-        }
-      }
-
-    }
-
-    .continueBtn {
-      @include button;
-      margin-top: 24px;
-      padding: 16px 0;
-      border: 1px solid $color_lines;
-      background: $color_main_10;
-
-      @include desktop {
-        margin-top: 12px;
-      }
-
-      span {
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 140%;
-        text-transform: uppercase;
-        text-align: center;
-        color: $color_main;
-      }
+     padding-bottom: 0;
     }
   }
 
@@ -91,6 +34,11 @@
     svg {
       width: 100%;
     }
+  }
+
+  .tickWrapper {
+    padding: 40px;
+    background-color: #FFF;
   }
 
 }
