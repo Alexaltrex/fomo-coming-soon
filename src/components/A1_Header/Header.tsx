@@ -6,6 +6,8 @@ import {observer} from "mobx-react-lite";
 import {useStore} from "../../store/rootStore";
 import {ButtonCustom} from "../_common/ButtonCustom/ButtonCustom";
 import {Logo} from "./Logo/Logo";
+import {Wallet} from "./Wallet/Wallet";
+import {Twitter} from "./Twitter/Twitter";
 
 export const Header = observer(() => {
     const {
@@ -23,12 +25,7 @@ export const Header = observer(() => {
 
                 {
                     address ? (
-                        <div className={clsx(style.connectedItem, style.borderItem)}>
-                            {svgIcons.wallet}
-                            <p>
-                                {address.slice(0, 4) + "..." + address.slice(address.length - 4, address.length)}
-                            </p>
-                        </div>
+                        <Wallet/>
                     ) : (
                         <ButtonCustom label="CONNECT WALLET"
                                       className={clsx(style.connectBtn, style.borderItem)}
@@ -38,10 +35,7 @@ export const Header = observer(() => {
 
                 {
                     twitter ? (
-                        <div className={clsx(style.connectedItem, style.borderItem)}>
-                            {svgIcons.x}
-                            <p>{twitter}</p>
-                        </div>
+                        <Twitter/>
                     ) : (
                         <ButtonCustom label="CONNECT TWITTER"
                                       className={clsx(style.connectBtn, style.borderItem)}
