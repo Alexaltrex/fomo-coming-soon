@@ -3,6 +3,7 @@ import {useFormik} from "formik";
 import style from "./InviteCodeForm.module.scss";
 import {FC} from "react";
 import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
+import {svgIcons} from "../../../assets/svgIcons";
 
 interface IValues {
     inviteCode: string
@@ -45,22 +46,29 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
         <form onSubmit={formik.handleSubmit}
               className={style.inviteCodeForm}
         >
+            <div className={style.title}>
+                {svgIcons.trophy}
+                <p>Please enter your invite code</p>
+            </div>
+
             <div className={style.inputWrapper}>
+
+                <div className={style.iconWrapper}>
+                    {svgIcons.users}
+                </div>
+
                 <input type="text"
-                       placeholder="Invite code"
+                       placeholder="enter invite code"
                        {...formik.getFieldProps('inviteCode')}
 
                 />
             </div>
 
-            <div className={style.continueBtnWrapper}>
-                <ButtonCustom label="Continue"
-                              kind={ButtonEnum.contained}
-                              type="submit"
-                              className={style.continueBtn}
-                />
-            </div>
-
+            <ButtonCustom label="Continue"
+                          kind={ButtonEnum.contained}
+                          type="submit"
+                          className={style.continueBtn}
+            />
 
 
         </form>
