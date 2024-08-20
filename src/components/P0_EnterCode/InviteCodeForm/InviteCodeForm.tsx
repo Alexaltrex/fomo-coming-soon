@@ -60,7 +60,6 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
                 <input type="text"
                        placeholder="enter invite code"
                        {...formik.getFieldProps('inviteCode')}
-
                 />
             </div>
 
