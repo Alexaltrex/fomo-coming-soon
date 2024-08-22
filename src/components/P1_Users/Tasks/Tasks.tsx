@@ -1,11 +1,21 @@
 import style from "./Tasks.module.scss";
 import {svgIcons} from "../../../assets/svgIcons";
 import {clsx} from "clsx";
+import {DepositModal} from "../../_common/DepositModal/DepositModal";
+import {useState} from "react";
 
 export const Tasks = () => {
 
+    const [depositModal, setDepositModal] = useState(false);
+    const [signed, setSigned] = useState(false);
+
     return (
         <div className={style.tasks}>
+
+            <DepositModal depositModal={depositModal}
+                          setSigned={() => setSigned(true)}
+                          onClose={() => setDepositModal(false)}
+            />
 
             <div className={style.tasksHeader}>
                 <p>You’re on the list!</p>
@@ -52,7 +62,7 @@ export const Tasks = () => {
                         },
                     ].map(({icon, label, labelDone, done}, key) => (
                         <div key={key}
-                                className={style.listItem}
+                             className={style.listItem}
                         >
                             <div className={clsx({
                                 [style.icon]: true,
@@ -71,6 +81,20 @@ export const Tasks = () => {
                     ))
                 }
             </div>
+
+            <button className={clsx({
+                [style.deposite]: true,
+                [style.deposite_signed]: signed,
+            })}
+                    onClick={() => {
+                        !signed && setDepositModal(true)
+                    }}
+            >
+                <div className={style.icon}>
+                    {signed ? svgIcons.check : svgIcons.solana}
+                </div>
+                <p>Deposit 0.1 Sol for Bot Protection</p>
+            </button>
 
         </div>
     )

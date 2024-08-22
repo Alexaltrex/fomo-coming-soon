@@ -1,24 +1,17 @@
 @import "../../assets/styles/app";
 
-.enterCode {
+.phase3User {
   height: 100%;
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   position: relative;
   padding-top: 24px;
+  //padding-bottom: 60px;
 
   @include desktop2 {
     align-items: center;
     padding-top: $k * 24px;
-  }
-
-  &_paddingBottom {
-    padding-bottom: 60px;
-
-    @include desktop2 {
-      padding-bottom: 0;
-    }
+    padding-bottom: 0;
   }
 
   .title {
@@ -36,21 +29,6 @@
     svg {
       width: 100%;
       height: 100%;
-    }
-  }
-
-  .subTitle {
-    margin-top: 12px;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 140%;
-    text-transform: uppercase;
-    color: $color_main_100;
-    text-align: center;
-
-    @include desktop2 {
-      font-size: $k * 18px;
-      margin-top: $k * 12px;
     }
   }
 
@@ -124,12 +102,12 @@
       margin-top: $k * 24px;
     }
 
-    & > div:nth-child(2) {
-      @include desktop2 {
-        height: calc(100vh - 57.6px - 28.8px - 86.4px - 14.4px - 30.2px - 28.8px - 176.2px - 28.8px - 142.6px - 28.8px - 43.2px - 2px);
-        overflow-y: auto;
-      }
-    }
+    //& > div:nth-child(2) {
+    //  @include desktop2 {
+    //    height: calc(100vh - 57.6px - 28.8px - 86.4px - 14.4px - 30.2px - 28.8px - 176.2px - 28.8px - 142.6px - 28.8px - 43.2px - 2px);
+    //    overflow-y: auto;
+    //  }
+    //}
   }
 
 }

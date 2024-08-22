@@ -17,7 +17,6 @@ interface IValues {
 export const Timer = () => {
     const [connectWallet, setConnectWallet] = useState(false)
 
-
     const days = "07";
     const hours = "02";
     const mins = "24";

@@ -1,0 +1,151 @@
+@import "../../../assets/styles/app";
+
+.depositModal {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    @include desktop2 {
+      width: $k * 440px;
+    }
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop2 {
+        height: $k * 36px;
+      }
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        @include desktop2 {
+          padding-left: $k * 12px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+
+          path {
+            fill: #FFF;
+            fill-opacity: 1;
+          }
+
+          @include desktop2 {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+
+        span {
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop2 {
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
+          }
+        }
+      }
+
+      .closeBtn {
+        @include button;
+        @include centerRow;
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+        @include desktop2 {
+          width: $k * 36px;
+        }
+
+      }
+    }
+
+    .description {
+      padding: 12px;
+      display: flex;
+
+      @include desktop2 {
+        padding: $k * 12px;
+      }
+
+      .iconWrapper {
+        @include centerRow;
+        flex-shrink: 0;
+        border: 1px solid $color_lines;
+        width: 50px;
+        height: 50px;
+
+        @include desktop2 {
+          width: $k * 50px;
+          height: $k * 50px;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+
+          @include desktop2 {
+            width: $k * 24px;
+            height: $k * 24px;
+          }
+
+          path {
+            fill-opacity: 0.5;
+            fill: #FFF;
+          }
+        }
+      }
+
+      p {
+        margin-left: 12px;
+        flex-grow: 1;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+
+        @include desktop2 {
+          margin-left: $k * 12px;
+          font-size: $k * 12px;
+        }
+      }
+
+    }
+
+    .signBtn {
+      border-top: 1px solid $color_lines;
+      width: 100%;
+      height: 48px;
+
+      @include desktop2 {
+        height: $k * 48px;
+      }
+    }
+
+
+  }
+}

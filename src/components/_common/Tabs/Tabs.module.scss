@@ -1,0 +1,53 @@
+@import "../../../assets/styles/app";
+
+.tabs {
+  background-color: $color_bg_and_text;
+  width: 100%;
+  display: grid;
+  //grid-template-columns: repeat(2, 1fr);
+  border: 1px solid $color_lines;
+  border-top: none;
+
+  @include desktop2 {
+    width: $k * 440px;
+  }
+
+  .btn {
+    @include button;
+    @include centerRow;
+    height: 36px;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #222;
+    }
+
+    @include desktop2 {
+      height: $k * 36px;
+    }
+
+    &:not(:first-child) {
+      border-left: 1px solid $color_lines;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color_body_50;
+
+      @include desktop2 {
+        font-size: $k * 12px;
+      }
+    }
+
+    &_selected {
+      span {
+        color: $color_main;
+      }
+
+    }
+  }
+}

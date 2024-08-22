@@ -1,48 +1,49 @@
-import style from "./Users.module.scss";
-import {useState} from "react";
+import style from "./Leader.module.scss";
+import React, {useState} from "react";
 import {clsx} from "clsx";
 import {svgIcons} from "../../assets/svgIcons";
 import {Tasks} from "./Tasks/Tasks";
 import {Referral} from "./Referral/Referral";
-import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
+import {Tabs} from "../_common/Tabs/Tabs";
+import {users} from "../_common/TopUsers/data";
+import {TopUsers} from "../_common/TopUsers/TopUsers";
 
 export const Leader = () => {
     const [tab, setTab] = useState(0)
 
     return (
-        <div className={style.users}>
+        <div className={style.leader}>
 
-            <div className={style.tabs}>
-                {
-                    ["Tasks", "referral"].map((label, key) => (
-                        <button key={key}
-                                onClick={() => setTab(key)}
-                                className={clsx({
-                                    [style.btn]: true,
-                                    [style.btn_selected]: key === tab,
-                                })}
-                        >
-                            <span>{label}</span>
-                        </button>
-                    ))
-                }
-            </div>
-
+            <Tabs tabs={["Tasks", "referral", "Who’s in?"]}
+                  tab={tab}
+                  onClick={(tab) => setTab(tab)}
+            />
 
             <div className={clsx({
                 [style.content]: true,
-                [style.content_padding]: tab === 1,
+                [style.content_tab1]: tab === 1,
+                [style.content_tab2]: tab === 2,
+
             })}>
 
                 <div className={style.title}>
                     {svgIcons.logo_full}
                 </div>
 
-                {
-                    tab === 0 ? <Tasks/> : <Referral/>
-                }
+                {tab === 0 && <Tasks/>}
 
-                <SocialLinks/>
+                {tab === 1 && <Referral/>}
+
+                {tab === 2 && (
+                    <>
+                        <div className={style.preTopUsers}>
+                            <p>2000 are already here</p>
+                        </div>
+                        <TopUsers users={users}/>
+                    </>
+                )}
+
+                {/*<SocialLinks/>*/}
             </div>
 
 

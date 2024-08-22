@@ -1,13 +1,13 @@
-import style from "../P0_EnterCode/EnterCode.module.scss";
+import style from "./Phase3User.module.scss";
 import {svgIcons} from "../../assets/svgIcons";
 import {Timer} from "./Timer/Timer";
-import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
-import {HaveInviteCode} from "./HaveInviteCode/HaveInviteCode";
-import {clsx} from "clsx";
+import React from "react";
+import {users} from "../_common/TopUsers/data";
+import {TopUsers} from "../_common/TopUsers/TopUsers";
 
 export const Phase3User = () => {
     return (
-        <div className={clsx(style.enterCode, style.enterCode_paddingBottom)}>
+        <div className={style.phase3User}>
 
             <div className={style.title}>
                 {svgIcons.logo_full}
@@ -15,9 +15,21 @@ export const Phase3User = () => {
 
             <Timer/>
 
-            <SocialLinks/>
+            <div className={style.texts}>
+                <p>Audited BY</p>
+                {svgIcons.halborn}
+                <p>2000 are already here </p>
+                <p>Who's in?</p>
+            </div>
 
-            <HaveInviteCode/>
+            <TopUsers users={users}
+                      className={style.topUsers}
+            />
+
+
+            {/*<SocialLinks/>*/}
+
+            {/*<HaveInviteCode/>*/}
 
 
         </div>

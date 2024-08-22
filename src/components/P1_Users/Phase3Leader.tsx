@@ -1,4 +1,4 @@
-import style from "./Users.module.scss";
+import style from "./Phase3Leader.module.scss";
 import {clsx} from "clsx";
 import {useState} from "react";
 import {svgIcons} from "../../assets/svgIcons";
@@ -6,32 +6,25 @@ import {Tasks} from "./Tasks/Tasks";
 import {Referral} from "./Referral/Referral";
 import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
 import {Timer} from "./Timer/Timer";
+import {Tabs} from "../_common/Tabs/Tabs";
+import {TopUsers} from "../_common/TopUsers/TopUsers";
+import {users} from "../_common/TopUsers/data";
 
 export const Phase3Leader = () => {
     const [tab, setTab] = useState(0)
 
     return (
-        <div className={style.users}>
+        <div className={style.phase3Leader}>
 
-            <div className={clsx(style.tabs, style.tabs_3)}>
-                {
-                    ["staking", "rewards", "Tasks"].map((label, key) => (
-                        <button key={key}
-                                onClick={() => setTab(key)}
-                                className={clsx({
-                                    [style.btn]: true,
-                                    [style.btn_selected]: key === tab,
-                                })}
-                        >
-                            <span>{label}</span>
-                        </button>
-                    ))
-                }
-            </div>
+            <Tabs tabs={["staking", "rewards", "Tasks", "Who’s in?"]}
+                  tab={tab}
+                  onClick={(tab) => setTab(tab)}
+            />
 
             <div className={clsx({
                 [style.content]: true,
-                [style.content_padding]: tab === 1,
+                [style.content_tab1]: tab === 1,
+                [style.content_tab3]: tab === 3,
             })}>
 
                 <div className={style.title}>
@@ -60,7 +53,20 @@ export const Phase3Leader = () => {
                     tab === 2 && <Tasks/>
                 }
 
-                <SocialLinks/>
+                {
+                    tab === 3 && (
+                        <>
+                            <div className={style.preTopUsers}>
+                                <p>2000 are already here</p>
+                            </div>
+                            <TopUsers users={users} />
+                        </>
+                    )
+                }
+
+
+
+                {/*<SocialLinks/>*/}
             </div>
 
 

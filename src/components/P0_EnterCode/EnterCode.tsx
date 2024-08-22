@@ -5,6 +5,8 @@ import {ConnectWallet} from "./ConnectWallet/ConnectWallet";
 import React, {useState} from "react";
 import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
 import {useNavigate} from "react-router-dom";
+import {TopUsers} from "../_common/TopUsers/TopUsers";
+import {users} from "../_common/TopUsers/data";
 
 export const EnterCode = () => {
     const [connectWallet, setConnectWallet] = useState(false)
@@ -23,7 +25,7 @@ export const EnterCode = () => {
 
             <InviteCodeForm onClick={() => setConnectWallet(true)}/>
 
-            <SocialLinks/>
+            {/*<SocialLinks/>*/}
 
             {
                 connectWallet && (
@@ -32,6 +34,18 @@ export const EnterCode = () => {
                     />
                 )
             }
+
+            <div className={style.texts}>
+                <p>Audited BY</p>
+                {svgIcons.halborn}
+                <p>2000 are already here </p>
+                <p>Who's in?</p>
+            </div>
+
+            <TopUsers users={users}
+                      className={style.topUsers}
+            />
+
 
         </div>
 

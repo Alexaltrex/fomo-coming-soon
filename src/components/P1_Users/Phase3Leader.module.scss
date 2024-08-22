@@ -1,0 +1,131 @@
+@import "../../assets/styles/app";
+
+.phase3Leader {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop2 {
+    align-items: center;
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_tab1 {
+      padding: 24px 0;
+
+      @include desktop2 {
+        padding: $k * 24px 0;
+      }
+    }
+
+    &_tab3 {
+      padding-top: 24px;
+
+      @include desktop2 {
+        padding-top: $k * 24px;
+      }
+    }
+
+
+
+    .title {
+      align-self: center;
+      width: 113px;
+      height: 18px;
+      margin-top: 16px;
+
+      @include desktop2 {
+        width: 145px;
+        height: 24px;
+        margin-top: 0;
+
+        @include desktop2 {
+          width: $k * 145px;
+          height: $k * 24px;
+        }
+      }
+
+      svg {
+        width: 100%;
+      }
+    }
+
+    .label {
+      align-self: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+      margin-top: 12px;
+      padding-left: 12px;
+
+      @include desktop2 {
+        font-size: $k * 12px;
+        margin-top: $k * 12px;
+        padding-left: $k * 12px;
+      }
+    }
+
+    .count {
+      background-color: $color_bg_and_text;
+      align-self: normal;
+      margin-top: 12px;
+      padding: 16px 12px;
+      border-top: 1px solid $color_lines;
+      border-bottom: 1px solid $color_lines;
+
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+
+      @include desktop2 {
+        margin-top: $k * 12px;
+        padding: $k * 16px $k * 12px;
+        border: 1px solid $color_lines;
+        font-size: $k * 12px;
+      }
+
+    }
+
+    .preTopUsers {
+      background-color: $color_bg_and_text;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding-left: 12px;
+      border: 1px solid $color_lines;
+      border-bottom: none;
+      width: 100%;
+
+      @include desktop2 {
+        margin-top: $k * 24px;
+        height: $k * 40px;
+        padding-left: $k * 12px;
+        width: $k * 440px;
+      }
+
+      p {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
+      }
+    }
+
+  }
+}
