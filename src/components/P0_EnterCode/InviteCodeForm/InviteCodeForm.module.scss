@@ -57,6 +57,13 @@
     border-top: 1px solid $color_lines;
     border-bottom: 1px solid $color_lines;
     padding-left: 8px;
+    transition: 0.3s border;
+
+    @include desktop2 {
+      border: 1px solid $color_lines;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
 
     @include desktop2 {
       padding-left: $k * 8px;
@@ -67,6 +74,7 @@
       border: 1px solid $color_lines;
       width: 32px;
       height: 32px;
+      transition: 0.3s border;
 
       @include desktop2 {
         width: $k * 32px;
@@ -76,6 +84,10 @@
       svg {
         width: 16px;
         height: 16px;
+
+        path {
+          transition: 0.3s;
+        }
 
         @include desktop2 {
           width: $k * 16px;
@@ -109,6 +121,20 @@
 
         @include desktop2 {
           font-size: $k * 12px;
+        }
+      }
+    }
+
+    &_focus {
+      border-color: rgba(211, 249, 50, 0.5);
+
+      .iconWrapper {
+        border-color: rgba(211, 249, 50, 0.5);
+
+        svg {
+          path {
+            fill: $color_main;
+          }
         }
       }
     }

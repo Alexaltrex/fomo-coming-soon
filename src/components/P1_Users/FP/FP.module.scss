@@ -1,0 +1,319 @@
+@import "../../../assets/styles/app";
+
+.fp {
+  width: 100%;
+
+  .preTopUsers {
+    background-color: $color_bg_and_text;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 12px;
+    border: 1px solid $color_lines;
+    border-bottom: none;
+    width: 100%;
+
+    @include desktop2 {
+      margin-top: $k * 24px;
+      height: $k * 40px;
+      padding-left: $k * 12px;
+      width: $k * 440px;
+      justify-content: center;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+
+      @include desktop2 {
+        font-size: $k * 12px;
+      }
+    }
+  }
+
+  .table {
+    width: 100%;
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    @include desktop2 {
+      border: 1px solid $color_lines;
+    }
+
+    &_second {
+      margin-top: 24px;
+
+      @include desktop2 {
+        margin-top: $k * 24px;
+      }
+    }
+
+    .tableTop {
+      display: flex;
+      align-items: center;
+      height: 36px;
+      padding-left: 12px;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop2 {
+        height: $k * 36px;
+        padding-left: $k * 12px;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        margin-right: 12px;
+
+        @include desktop2 {
+          width: $k * 16px;
+          height: $k * 16px;
+          margin-right: $k * 12px;
+        }
+
+        path {
+          fill-opacity: 1;
+        }
+      }
+
+      p {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
+      }
+
+    }
+
+    .tableHeader {
+      height: 36px;
+      display: grid;
+      grid-template-columns: 1fr 85px 108px;
+      align-items: center;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop2 {
+        height: $k * 36px;
+        grid-template-columns: 1fr $k * 85px $k * 108px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_body_50;
+
+        @include desktop2 {
+          font-size: $k * 12px;
+        }
+
+        &:nth-child(1) {
+          padding-left: 12px;
+
+          @include desktop2 {
+            padding-left: $k * 12px;
+          }
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          text-align: center;
+        }
+      }
+    }
+
+    .body {
+
+      .row {
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+        height: 48px;
+
+        @include desktop2 {
+          padding-left: $k * 12px;
+          height: $k * 48px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color_lines;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_body_50;
+
+          @include desktop2 {
+            font-size: $k * 12px;
+          }
+        }
+
+        p:nth-child(1) {
+          flex-grow: 1;
+        }
+
+        p:nth-child(2) {
+          @include centerRow;
+          position: relative;
+          color: $color_main_100;
+          width: 108px;
+          flex-shrink: 0;
+
+          &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            height: 24px;
+            width: 1px;
+            background-color: $color_lines;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &:last-child {
+
+          p:nth-child(1) {
+            color: $color_main_100;
+          }
+
+          p:nth-child(2) {
+            color: $color_main;
+          }
+        }
+      }
+
+    }
+
+    .body2 {
+      height: calc(100vh - 48px - 36px - 36px - 24px - 24px - 24px - 40px - 230px - 24px - 36px - 36px - 48px);
+      overflow-y: auto;
+
+      @include desktop2 {
+        height: calc(100vh - $k * (48px + 36px + 36px + 24px + 24px + 24px + 40px + 230px + 24px + 36px + 36px + 48px));
+      }
+
+      .row2 {
+        height: 48px;
+        display: grid;
+        grid-template-columns: 1fr 85px 108px;
+        align-items: center;
+
+        @include desktop2 {
+          height: $k * 48px;
+          grid-template-columns: 1fr $k * 85px $k * 108px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color_lines;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          padding-left: 8px;
+
+          @include desktop2 {
+            padding-left: $k * 8px;
+          }
+
+          img {
+            display: block;
+            width: 32px;
+            height: 32px;
+
+            @include desktop2 {
+              width: $k * 32px;
+              height: $k * 32px;
+            }
+          }
+
+          p {
+            margin-left: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color: $color_main_100;
+
+            @include desktop2 {
+              margin-left: $k * 12px;
+              font-size: $k * 12px;
+            }
+          }
+
+          a {
+            margin-left: 4px;
+
+            @include desktop2 {
+              margin-left: $k * 4px;
+            }
+
+            svg {
+              width: 12px;
+              height: 12px;
+
+              @include desktop2 {
+                width: $k * 12px;
+                height: $k * 12px;
+              }
+            }
+          }
+
+
+        }
+
+        .pts, .referred {
+          @include centerRow;
+          position: relative;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop2 {
+            font-size: $k * 12px;
+          }
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 32px;
+            background-color: $color_lines;
+
+            @include desktop2 {
+              height: $k * 32px;
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .myPointsButton {
+    width: 100%;
+    height: 48px;
+  }
+}

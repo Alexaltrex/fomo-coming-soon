@@ -9,6 +9,15 @@
     align-items: center;
   }
 
+  .tabsWrapper {
+    width: 336px;
+    margin: 0 auto;
+
+    @include desktop2 {
+      width: $k * 336px;
+    }
+  }
+
   .content {
     flex-grow: 1;
     display: flex;
@@ -16,7 +25,7 @@
     justify-content: center;
     align-items: center;
 
-    &_tab1 {
+    &_paddingVertical {
       padding: 24px 0;
 
       @include desktop2 {
@@ -24,7 +33,7 @@
       }
     }
 
-    &_tab2 {
+    &_paddingTop {
       padding-top: 24px;
 
       @include desktop2 {
@@ -63,6 +72,7 @@
         height: $k * 40px;
         padding-left: $k * 12px;
         width: $k * 440px;
+        justify-content: center;
       }
 
       p {
@@ -74,6 +84,17 @@
 
         @include desktop2 {
           font-size: $k * 12px;
+        }
+      }
+    }
+
+    .topUsers {
+      & > div:nth-child(2) {
+        height: calc(100vh - 48px - 36px - 24px - 18px - 24px - 40px - 36px - 4px);
+        overflow-y: auto;
+
+        @include desktop2 {
+          height: calc(100vh - $k * (48px + 36px + 24px + 18px + 24px + 40px + 36px + 24px));
         }
       }
     }

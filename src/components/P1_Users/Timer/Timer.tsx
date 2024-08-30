@@ -2,12 +2,13 @@ import style from "./Timer.module.scss"
 import {FormikErrors, FormikHelpers} from "formik/dist/types";
 import {useFormik} from "formik";
 import {svgIcons} from "../../../assets/svgIcons";
-import {useState} from "react";
+import React, {useState} from "react";
 import {ConnectWallet} from "../../P0_EnterCode/ConnectWallet/ConnectWallet";
 import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
 
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+import {clsx} from "clsx";
 
 interface IValues {
     value: number
@@ -50,6 +51,8 @@ export const Timer = () => {
         onSubmit: onSubmit,
         //validate: validate
     })
+
+    const [focus, setFocus] = useState(false)
 
     return (
         <div className={style.timer}>
@@ -104,47 +107,8 @@ export const Timer = () => {
                 </FlipClockCountdown>
             </div>
 
-            {/*<div className={style.timerValues}>*/}
-            {/*    {*/}
-            {/*        [*/}
-            {/*            {*/}
-            {/*                value: days,*/}
-            {/*                label: "days"*/}
-            {/*            },*/}
-            {/*            {*/}
-            {/*                value: hours,*/}
-            {/*                label: "hours"*/}
-            {/*            },*/}
-            {/*            {*/}
-            {/*                value: mins,*/}
-            {/*                label: "mins"*/}
-            {/*            },*/}
-            {/*            {*/}
-            {/*                value: secs,*/}
-            {/*                label: "secs"*/}
-            {/*            },*/}
-            {/*        ].map(({value, label}, key) => (*/}
-            {/*            <div key={key}*/}
-            {/*                 className={style.timerItem}*/}
-            {/*            >*/}
-            {/*                <div className={style.values}>*/}
-            {/*                    <div>*/}
-            {/*                        <p>{value[0]}</p>*/}
-            {/*                    </div>*/}
-            {/*                    <div>*/}
-            {/*                        <p>{value[1]}</p>*/}
-            {/*                    </div>*/}
-            {/*                </div>*/}
-            {/*                <p className={style.label}>*/}
-            {/*                    {label}*/}
-            {/*                </p>*/}
-            {/*            </div>*/}
-            {/*        ))*/}
-            {/*    }*/}
-            {/*</div>*/}
-
             <p className={style.label}>
-                Total staked
+                Total DEPOSITED
             </p>
 
             <p className={style.totalStakedValue}>
@@ -156,19 +120,32 @@ export const Timer = () => {
             </p>
 
             <p className={style.formLabel}>
-                Stake your Solana until launch
+                Deposit your Solana until launch
             </p>
 
             <form onSubmit={formik.handleSubmit}
-                  className={style.form}
+                  className={clsx({
+                      [style.form]: true,
+                      [style.form_focus]: focus,
+                  })}
             >
-                <div className={style.inputWrapper}>
+                <div className={clsx({
+                    [style.inputWrapper]: true,
+                    [style.inputWrapper_focus]: focus,
+                })}>
+                    {svgIcons.solana}
                     <input type="number"
                         //placeholder="Invite code"
                            {...formik.getFieldProps('value')}
-
+                           onFocus={() => setFocus(true)}
+                           onBlur={e => {
+                               formik.handleBlur(e);
+                               setFocus(false)
+                           }}
                     />
-                    <p>SOL</p>
+                    {/*<p>*/}
+                    {/*   /$3,500*/}
+                    {/*</p>*/}
                 </div>
 
                 <ButtonCustom label="STAKE"

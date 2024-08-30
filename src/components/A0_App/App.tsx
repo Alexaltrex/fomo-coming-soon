@@ -8,8 +8,8 @@ import {Leader} from "../P1_Users/Leader";
 import {User} from "../P1_Users/User";
 import {Phase3User} from "../P1_Users/Phase3User";
 import {Phase3Leader} from "../P1_Users/Phase3Leader";
-import {Test} from "../Test/Test";
 import {Lines} from "../_common/Lines/Lines";
+
 export const App = () => {
     return (
         <div className={style.app}>
@@ -26,7 +26,6 @@ export const App = () => {
                             <Route path='/leader' element={<Leader/>}/>
                             <Route path='/phase3User' element={<Phase3User/>}/>
                             <Route path='/phase3Leader' element={<Phase3Leader/>}/>
-                            <Route path='/test' element={<Test/>}/>
                         </Routes>
                     </div>
 

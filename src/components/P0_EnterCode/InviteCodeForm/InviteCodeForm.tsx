@@ -1,9 +1,10 @@
 import {FormikErrors, FormikHelpers} from "formik/dist/types";
 import {useFormik} from "formik";
 import style from "./InviteCodeForm.module.scss";
-import {FC} from "react";
+import {FC, useState} from "react";
 import {ButtonCustom, ButtonEnum} from "../../_common/ButtonCustom/ButtonCustom";
 import {svgIcons} from "../../../assets/svgIcons";
+import {clsx} from "clsx";
 
 interface IValues {
     inviteCode: string
@@ -42,6 +43,8 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
         validate: validate
     })
 
+    const [focus, setFocus] = useState(false)
+
     return (
         <form onSubmit={formik.handleSubmit}
               className={style.inviteCodeForm}
@@ -51,7 +54,10 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
                 <p>Please enter your invite code</p>
             </div>
 
-            <div className={style.inputWrapper}>
+            <div className={clsx({
+                [style.inputWrapper]: true,
+                [style.inputWrapper_focus]: focus,
+            })}>
 
                 <div className={style.iconWrapper}>
                     {svgIcons.users}
@@ -60,6 +66,11 @@ export const InviteCodeForm: FC<IInviteCodeForm> = ({onClick}) => {
                 <input type="text"
                        placeholder="enter invite code"
                        {...formik.getFieldProps('inviteCode')}
+                       onFocus={() => setFocus(true)}
+                       onBlur={e => {
+                           formik.handleBlur(e);
+                           setFocus(false)
+                       }}
                 />
             </div>
 

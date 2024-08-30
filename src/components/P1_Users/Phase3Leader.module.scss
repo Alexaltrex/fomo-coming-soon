@@ -9,6 +9,15 @@
     align-items: center;
   }
 
+  .tabsWrapper {
+    width: 336px;
+    margin: 0 auto;
+
+    @include desktop2 {
+      width: $k * 336px;
+    }
+  }
+
   .content {
     flex-grow: 1;
     display: flex;
@@ -16,7 +25,7 @@
     justify-content: center;
     align-items: center;
 
-    &_tab1 {
+    &_verticalPadding {
       padding: 24px 0;
 
       @include desktop2 {
@@ -24,7 +33,7 @@
       }
     }
 
-    &_tab3 {
+    &_topPadding {
       padding-top: 24px;
 
       @include desktop2 {
@@ -74,6 +83,8 @@
     }
 
     .count {
+      display: flex;
+      align-items: center;
       background-color: $color_bg_and_text;
       align-self: normal;
       margin-top: 12px;
@@ -81,17 +92,42 @@
       border-top: 1px solid $color_lines;
       border-bottom: 1px solid $color_lines;
 
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 140%;
-      text-transform: uppercase;
-      color: $color_main_100;
-
       @include desktop2 {
         margin-top: $k * 12px;
         padding: $k * 16px $k * 12px;
         border: 1px solid $color_lines;
-        font-size: $k * 12px;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+
+        @include desktop2 {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+
+        path {
+          fill-opacity: 0.5;
+          fill: #FFF;
+        }
+      }
+
+      p {
+        margin-left: 4px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+
+        @include desktop2 {
+          margin-left: $k * 4px;
+          font-size: $k * 12px;
+        }
+
+        span {
+          color: $color_body_50;
+        }
       }
 
     }
@@ -123,6 +159,17 @@
 
         @include desktop2 {
           font-size: $k * 12px;
+        }
+      }
+    }
+
+    .topUsers {
+      & > div:nth-child(2) {
+        height: calc(100vh - 48px - 36px - 24px - 18px - 24px - 40px - 36px - 4px);
+        overflow-y: auto;
+
+        @include desktop2 {
+          height: calc(100vh - $k * (48px + 36px + 24px + 18px + 24px + 40px + 36px + 24px));
         }
       }
     }

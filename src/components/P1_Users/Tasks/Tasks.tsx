@@ -29,38 +29,49 @@ export const Tasks = () => {
                             label: "Connect Wallet",
                             labelDone: "Wallet connected",
                             done: true,
+                            value: "50",
                         },
                         {
                             icon: svgIcons.telegram,
                             label: "Connect Telegram",
                             labelDone: "Telegram connected",
                             done: true,
+                            value: "50",
                         },
                         {
                             icon: svgIcons.users,
                             label: "First 10 users",
                             labelDone: "10 users invited",
                             done: false,
+                            value: "50",
                         },
                         {
                             icon: svgIcons.x,
                             label: "Connect Twitter",
                             labelDone: "Twitter connected",
                             done: false,
+                            value: "50",
                         },
                         {
                             icon: svgIcons.x,
                             label: "Follow Twiiter",
                             labelDone: "Twitter followed",
                             done: false,
+                            value: "50",
                         },
                         {
                             icon: svgIcons.x,
                             label: "Tweet",
                             labelDone: "Tweeted",
                             done: false,
+                            value: "50",
                         },
-                    ].map(({icon, label, labelDone, done}, key) => (
+                    ].map(({
+                                                   icon,
+                                                   label, labelDone,
+                                                   done,
+                        value
+                                               }, key) => (
                         <div key={key}
                              className={style.listItem}
                         >
@@ -77,6 +88,13 @@ export const Tasks = () => {
                             })}>
                                 {done ? labelDone : label}
                             </p>
+
+                            <div className={clsx({
+                                [style.value]: true,
+                                [style.value_done]: done,
+                            })}>
+                               <p>✦ {value}</p>
+                            </div>
                         </div>
                     ))
                 }
@@ -93,7 +111,10 @@ export const Tasks = () => {
                 <div className={style.icon}>
                     {signed ? svgIcons.check : svgIcons.solana}
                 </div>
-                <p>Deposit 0.1 Sol for Bot Protection</p>
+                <p className={style.label}>Deposit 0.1 Sol for Early Access</p>
+                <div className={style.value}>
+                    <p>✦ 1,000</p>
+                </div>
             </button>
 
         </div>

@@ -3,7 +3,6 @@ import {svgIcons} from "../../assets/svgIcons";
 import {InviteCodeForm} from "./InviteCodeForm/InviteCodeForm";
 import {ConnectWallet} from "./ConnectWallet/ConnectWallet";
 import React, {useState} from "react";
-import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
 import {useNavigate} from "react-router-dom";
 import {TopUsers} from "../_common/TopUsers/TopUsers";
 import {users} from "../_common/TopUsers/data";

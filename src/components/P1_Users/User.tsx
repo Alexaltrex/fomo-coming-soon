@@ -2,7 +2,6 @@ import style from "./Users.module.scss";
 import {clsx} from "clsx";
 import {svgIcons} from "../../assets/svgIcons";
 import {Tasks} from "./Tasks/Tasks";
-import {SocialLinks} from "../_common/SocialLinks/SocialLinks";
 import {useState} from "react";
 import {TopUsers} from "../_common/TopUsers/TopUsers";
 import {users} from "../_common/TopUsers/data";
@@ -14,7 +13,7 @@ export const User = () => {
     return (
         <div className={style.users}>
 
-            <Tabs tabs={["Tasks", "Who’s in?"]}
+            <Tabs tabs={["Tasks", "Who’s in?", "POINTS"]}
                   tab={tab}
                   onClick={(tab) => setTab(tab)}
             />
@@ -37,7 +36,9 @@ export const User = () => {
                             <div className={style.preTopUsers}>
                                 <p>2000 are already here</p>
                             </div>
-                            <TopUsers users={users} />
+                            <TopUsers users={users}
+                                      className={style.topUsers}
+                            />
                         </>
 
                     )

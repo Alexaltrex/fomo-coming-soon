@@ -55,7 +55,8 @@
     .listItem {
       @include button;
       height: 48px;
-      padding: 8px 12px;
+      padding: 8px;
+      padding-right: 0;
       display: flex;
       align-items: center;
       border-top: 1px solid $color_lines;
@@ -63,7 +64,7 @@
       @include desktop2 {
         height: $k * 48px;
         padding: $k * 8px;
-
+        padding-right: 0;
 
         &:nth-child(1), &:nth-child(2), &:nth-child(3), {
           border-right: 1px solid $color_lines;
@@ -72,13 +73,14 @@
 
       .icon {
         @include centerRow;
+        flex-shrink: 0;
         width: 32px;
         height: 32px;
         border: 1px solid $color_lines;
 
         @include desktop2 {
-          width: $k * 32px;
-          height: $k * 32px;
+          width: $k * 28px;
+          height: $k * 28px;
         }
 
         svg {
@@ -110,14 +112,53 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_body_50;
+        white-space: nowrap;
 
         @include desktop2 {
-          margin-left: $k * 12px;
+          margin-left: $k * 10px;
           font-size: $k * 12px;
         }
 
         &_done {
           color: $color_main_100;
+        }
+      }
+
+      .value {
+        margin-left: 8px;
+        padding: 2px 4px;
+        border: 1px solid $color_lines;
+        border-radius: 999px;
+
+        p {
+          font-weight: 400;
+          font-size: 8px;
+          color: $color_body_50;
+        }
+
+        @include desktop2 {
+          margin-left: $k * 8px;
+          padding: $k * 2px $k * 4px;
+
+          p {
+            font-size: $k * 8px;
+          }
+        }
+
+        &_done {
+          border: none;
+          background-color: $color_main_10;
+
+          p {
+            color: $color_main;
+          }
+
+          svg {
+            path {
+              fill-opacity: 1;
+              fill: $color_main;
+            }
+          }
         }
       }
     }
@@ -142,8 +183,8 @@
       height: 32px;
 
       @include desktop2 {
-        width: $k * 32px;
-        height: $k * 32px;
+        width: $k * 28px;
+        height: $k * 28px;
       }
 
       svg {
@@ -154,7 +195,7 @@
       }
     }
 
-    p {
+    .label{
       padding-left: 12px;
       font-weight: 700;
       font-size: 12px;
@@ -168,6 +209,28 @@
       }
     }
 
+    .value {
+      margin-left: 8px;
+      padding: 2px 4px;
+      border: 1px solid $color_lines;
+      border-radius: 999px;
+
+      p {
+        font-weight: 400;
+        font-size: 8px;
+        color: $color_body_50;
+      }
+
+      @include desktop2 {
+        margin-left: $k * 8px;
+        padding: $k * 2px $k * 4px;
+
+        p {
+          font-size: $k * 8px;
+        }
+      }
+    }
+
     &_signed {
 
       .icon {
@@ -178,9 +241,26 @@
         }
       }
 
-      p {
+      .label {
         color: $color_main;
       }
+
+      .value {
+        border: none;
+        background-color: $color_main_10;
+
+        p {
+          color: $color_main;
+        }
+
+        svg {
+          path {
+            fill-opacity: 1;
+            fill: $color_main;
+          }
+        }
+      }
+
     }
   }
 }

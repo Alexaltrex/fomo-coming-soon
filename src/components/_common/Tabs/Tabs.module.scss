@@ -1,12 +1,12 @@
 @import "../../../assets/styles/app";
 
 .tabs {
+  position: relative;
   background-color: $color_bg_and_text;
   width: 100%;
   display: grid;
   //grid-template-columns: repeat(2, 1fr);
-  border: 1px solid $color_lines;
-  border-top: none;
+  border-bottom: 1px solid $color_lines;
 
   @include desktop2 {
     width: $k * 440px;
@@ -18,16 +18,8 @@
     height: 36px;
     background-color: transparent;
 
-    &:hover {
-      background-color: #222;
-    }
-
     @include desktop2 {
       height: $k * 36px;
-    }
-
-    &:not(:first-child) {
-      border-left: 1px solid $color_lines;
     }
 
     span {
@@ -49,5 +41,13 @@
       }
 
     }
+  }
+
+  .line {
+    position: absolute;
+    bottom: 0;
+    background-color: $color_main;
+    height: 1px;
+    transition: 0.2s;
   }
 }
