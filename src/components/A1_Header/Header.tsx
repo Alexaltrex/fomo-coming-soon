@@ -8,6 +8,8 @@ import {ButtonCustom} from "../_common/ButtonCustom/ButtonCustom";
 import {Logo} from "./Logo/Logo";
 import {Wallet} from "./Wallet/Wallet";
 import {Twitter} from "./Twitter/Twitter";
+import {useState} from "react";
+import {ConnectTwitter} from "./ConnectTwitter/ConnectTwitter";
 
 export const Header = observer(() => {
     const {
@@ -16,10 +18,15 @@ export const Header = observer(() => {
         }
     } = useStore();
 
+    const [showConnectTwitter, setShowConnectTwitter] = useState(false)
 
     return (
         <header className={style.header}>
             <Logo/>
+            <ConnectTwitter showConnectTwitter={showConnectTwitter}
+                            onClose={() => setShowConnectTwitter(false)}
+                            onConnect={() => setTwitter("@KeanuReev")}
+            />
 
             <div className={style.rightPart}>
 
@@ -39,7 +46,7 @@ export const Header = observer(() => {
                     ) : (
                         <ButtonCustom label="CONNECT TWITTER"
                                       className={clsx(style.connectBtn, style.borderItem)}
-                                      onClick={() => setTwitter("@KeanuReev")}
+                                      onClick={() => setShowConnectTwitter(true)}
                         />
                     )
                 }
